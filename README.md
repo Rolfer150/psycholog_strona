@@ -1,0 +1,1 @@
+# psycholog_strona
