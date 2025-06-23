@@ -1,16 +1,18 @@
-import { Head, Link, usePage } from '@inertiajs/react';
-import Heading from '@/components/home-components/heading';
+import { Head } from '@inertiajs/react'
+import Heading from '@/components/home-components/heading'
+import WebLayout from '@/layouts/web-layout'
 
 export default function Home() {
     return (
         <>
-            <Head title="Strona główna">
-                <link rel="preconnect" href="https://fonts.bunny.net" />
-                <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
-            </Head>
+            <Head title="Strona główna" />
+
             <Heading
-                title='Nowa strona gabinetu Psychoterapia'
-                description='eee' />
+                title="Nowa strona gabinetu Psychoterapia"
+                description="eee"
+            />
         </>
-    );
+    )
 }
+
+Home.layout = (page: React.ReactNode) => <WebLayout>{page}</WebLayout>

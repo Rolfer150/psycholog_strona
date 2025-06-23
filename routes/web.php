@@ -11,13 +11,13 @@ Route::get('/o-mnie', function () {
     return Inertia::render('about');
 })->name('about');
 
-Route::get('/uslugi', function () {
+Route::get('/uslugi-i-ceny', function () {
     return Inertia::render('services');
 })->name('services');
 
-Route::get('/umow-wizyte', function () {
-    return Inertia::render('appointment');
-})->name('appointment');
+Route::get('/cennik', function () {
+    return Inertia::render('prices');
+})->name('prices');
 
 Route::get('/kontakt', function () {
     return Inertia::render('contact');
