@@ -6,9 +6,9 @@ export default function Heading() {
     const navItems = [
         { href: route('home'), path: '/', label: 'Strona główna' },
         { href: route('about'), path: '/o-mnie', label: 'O mnie' },
-        { href: route('services'), path: '/uslugi-i-ceny', label: 'Usługi i ceny' },
+        { href: route('services.public'), path: '/uslugi-i-ceny', label: 'Usługi i ceny' },
         // { href: route('prices'), path: '/cennik', label: 'Umów wizytę' },
-        { href: route('contact'), path: '/kontakt', label: 'Kontakt' },
+        { href: route('messages.create'), path: '/kontakt', label: 'Kontakt' },
     ];
 
     const isActive = (path) => url === path;

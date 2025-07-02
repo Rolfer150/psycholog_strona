@@ -170,3 +170,20 @@ p.required_field:before {
     color: red;
     padding-right: 5px;
 }
+
+#contentEditable ul, ol {
+    margin-left: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+#contentEditable ul {
+    list-style-type: disc;
+}
+
+#contentEditable ol {
+    list-style-type: decimal;
+}
+
+#contentEditable li {
+    margin-bottom: 0.5rem;
+}
