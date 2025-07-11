@@ -17,7 +17,7 @@ export default function ServiceIndex() {
             id: number;
             name: string;
             description: string;
-            price: string;
+            price_formatted: string;
         }[];
     };
 
@@ -52,7 +52,7 @@ export default function ServiceIndex() {
                                         ? service.description.slice(0, 80) + '...'
                                         : service.description}
                                 </td>
-                                <td className="px-4 py-3">{service.price}</td>
+                                <td className="px-4 py-3">{service.price_formatted}</td>
                                 <td className="px-4 py-3 space-x-2">
                                     <Link
                                         href={route('services.edit', service.id)}

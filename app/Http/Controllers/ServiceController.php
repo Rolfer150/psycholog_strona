@@ -44,9 +44,15 @@ class ServiceController extends Controller
             'name' => ['required', 'string', 'max:128'],
             'description' => ['nullable', 'string'],
             'price' => ['required', 'numeric', 'min:0'],
+            'image_path' => ['nullable', 'image', 'mimes:jpg,jpeg,png,svg', 'max:2048'],
         ]);
 
-        $validated['slug'] = Str::slug($validated[preg_replace('/\s+/', '-', strtolower('name'))]);
+        $validated['slug'] = Str::slug(preg_replace('/\s+/', '-', strtolower($validated['name'])));
+
+        if ($request->hasFile('image_path')) {
+            $path = $request->file('image_path')->store('services_images', 'public');
+            $validated['image_path'] = $path;
+        }
 
         Service::create($validated);
 

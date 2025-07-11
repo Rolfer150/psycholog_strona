@@ -13,10 +13,12 @@ class MessageController extends Controller
 {
     public function index(): Response
     {
+        $paginator = Message::latest()->paginate(10);
+        $collection = $paginator->getCollection()->map(fn ($m) => (new MessageResource($m))->toArray(request()));
+        $paginator->setCollection(collect($collection));
+
         return Inertia::render('contact/index', [
-            'messages' => MessageResource::collection(
-                Message::latest()->paginate(10)
-            ),
+            'messages' => $paginator,
         ]);
     }
 
@@ -43,7 +45,7 @@ class MessageController extends Controller
 
     public function show(Message $message): Response
     {
-        return Inertia::render('Admin/Messages/Show', [
+        return Inertia::render('contact/show', [
             'message' => new MessageResource($message),
         ]);
     }

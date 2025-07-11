@@ -9,12 +9,13 @@ class ServiceResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id'          => $this->id,
-            'name'        => $this->name,
-            'slug'        => $this->slug,
+            'id' => $this->id,
+            'name' => $this->name,
+            'slug' => $this->slug,
             'description' => $this->description,
-            'price' => $this->getPrice(), // użycie metody z modelu
-            'image_url' => $this->getURLImage(), // też z modelu
+            'price' => $this->price,
+            'price_formatted' => $this->getPrice(),
+            'image_path' => $this->getURLImage(),
         ];
     }
 }

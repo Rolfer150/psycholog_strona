@@ -1,36 +1,94 @@
-import { Head, Link } from '@inertiajs/react';
-import { useEffect } from 'react'
-import WebLayout from '@/layouts/web-layout'
-import L from 'leaflet'
-import 'leaflet/dist/leaflet.css'
+import React, { useEffect, useRef } from 'react';
+import { Head, Link, useForm } from '@inertiajs/react';
+import WebLayout from '@/layouts/web-layout';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 
 export default function Create() {
+    // --- Map initialization ---
+    const mapRef = useRef<HTMLDivElement>(null);
+
     useEffect(() => {
-        const location = [49.4960291, 20.0063216]
-        const map = L.map('map').setView(location, 15)
+        if (!mapRef.current) return;
+        const location = [49.4960291, 20.0063216];
+        const map = L.map(mapRef.current).setView(location, 15);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '© OpenStreetMap contributors'
-        }).addTo(map)
+        }).addTo(map);
 
         const marker = L.marker(location).addTo(map)
-            .bindPopup("mgr Jakub Chrobak - Psycholog")
+            .bindPopup("mgr Jakub Chrobak - Psycholog");
 
-        marker.on('mouseover', () => marker.openPopup())
-        marker.on('mouseout', () => marker.closePopup())
+        marker.on('mouseover', () => marker.openPopup());
+        marker.on('mouseout', () => marker.closePopup());
         marker.on('click', () => {
-            window.location.href = "https://www.google.com/maps/place/Krakowska+66,+Nowy+Targ"
-        })
-    }, [])
+            window.location.href = "https://www.google.com/maps/place/Krakowska+66,+Nowy+Targ";
+        });
+    }, []);
+
+    // --- Formularz (Inertia) ---
+    const { data, setData, post, processing, errors, reset } = useForm({
+        name: '',
+        email: '',
+        text: '',
+    });
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        post(route('messages.store'), {
+            onSuccess: () => reset(),
+        });
+    };
+
+    // --- Animacja fade-in formularza ---
+    const formRef = useRef<HTMLFormElement>(null);
+
+    useEffect(() => {
+        if (!formRef.current) return;
+        const el = formRef.current;
+        el.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700', 'ease-out');
+
+        const observer = new window.IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    el.classList.add('opacity-100', 'translate-y-0');
+                    el.classList.remove('opacity-0', 'translate-y-8');
+                    observer.unobserve(el);
+                }
+            },
+            { threshold: 0.2 }
+        );
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, []);
+
+    // --- Animacja fade-in mapy ---
+    useEffect(() => {
+        if (!mapRef.current) return;
+        const el = mapRef.current;
+        el.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700', 'ease-out');
+
+        const observer = new window.IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    el.classList.add('opacity-100', 'translate-y-0');
+                    el.classList.remove('opacity-0', 'translate-y-8');
+                    observer.unobserve(el);
+                }
+            },
+            { threshold: 0.2 }
+        );
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, []);
 
     return (
         <>
             <Head title="Kontakt" />
-
             <div className="mx-8 my-12 p-8">
                 <h1 className="text-7xl font-bold text-teal-400 mb-12">Kontakt</h1>
-
                 <section className="flex flex-col md:flex-row gap-8 mb-16">
                     {/* Dane kontaktowe */}
                     <div className="bg-teal-400 text-white p-6 rounded-xl shadow-lg w-full md:w-1/3">
@@ -92,11 +150,14 @@ export default function Create() {
                             </div>
                         </div>
                     </div>
-
-                    {/* Formularz */}
-                    <form className="bg-white rounded-xl shadow-lg p-6 w-full md:w-2/3 space-y-6">
+                    {/* Formularz z animacją fade-in */}
+                    <form
+                        ref={formRef}
+                        onSubmit={handleSubmit}
+                        className="bg-white rounded-xl shadow-lg p-6 w-full md:w-2/3 space-y-6"
+                    >
+                        {/* ...reszta formularza jak wcześniej... */}
                         <h2 className="text-3xl font-semibold text-center text-teal-400">Napisz wiadomość</h2>
-
                         <div>
                             <label htmlFor="name" className="block mb-1 text-zinc-700 font-medium">
                                 Imię i nazwisko
@@ -105,11 +166,13 @@ export default function Create() {
                                 type="text"
                                 id="name"
                                 name="name"
+                                value={data.name}
+                                onChange={e => setData('name', e.target.value)}
                                 className="w-full border border-zinc-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 focus:outline-none p-2 rounded-md"
                                 required
                             />
+                            {errors.name && <div className="text-red-600 text-sm">{errors.name}</div>}
                         </div>
-
                         <div>
                             <label htmlFor="email" className="block mb-1 text-zinc-700 font-medium">
                                 Adres e-mail
@@ -118,38 +181,46 @@ export default function Create() {
                                 type="email"
                                 id="email"
                                 name="email"
+                                value={data.email}
+                                onChange={e => setData('email', e.target.value)}
                                 className="w-full border border-zinc-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 focus:outline-none p-2 rounded-md"
                                 required
                             />
+                            {errors.email && <div className="text-red-600 text-sm">{errors.email}</div>}
                         </div>
-
                         <div>
-                            <label htmlFor="message" className="block mb-1 text-zinc-700 font-medium">
+                            <label htmlFor="text" className="block mb-1 text-zinc-700 font-medium">
                                 Wiadomość
                             </label>
                             <textarea
-                                id="message"
-                                name="message"
+                                id="text"
+                                name="text"
                                 rows={5}
+                                value={data.text}
+                                onChange={e => setData('text', e.target.value)}
                                 className="w-full border border-zinc-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 focus:outline-none p-2 rounded-md"
                                 required
                             />
+                            {errors.text && <div className="text-red-600 text-sm">{errors.text}</div>}
                         </div>
-
                         <button
                             type="submit"
+                            disabled={processing}
                             className="w-full py-3 border-teal-400 border hover:bg-teal-400 text-teal-400 hover:text-white text-lg hover:shadow-sm font-semibold rounded-md cursor-pointer transition-all duration-300 ease-in-out"
                         >
-                            Wyślij wiadomość
+                            {processing ? 'Wysyłanie...' : 'Wyślij wiadomość'}
                         </button>
                     </form>
                 </section>
-
-                {/* Mapa */}
-                <div id="map" className="w-full h-96 mt-12 rounded-lg shadow-md"></div>
+                {/* Mapa z animacją */}
+                <div
+                    ref={mapRef}
+                    id="map"
+                    className="w-full h-96 mt-12 rounded-lg shadow-md"
+                ></div>
             </div>
         </>
-    )
+    );
 }
 
-Create.layout = (page: React.ReactNode) => <WebLayout>{page}</WebLayout>
+Create.layout = (page: React.ReactNode) => <WebLayout>{page}</WebLayout>;

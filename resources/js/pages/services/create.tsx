@@ -1,27 +1,25 @@
 import AppLayout from '@/layouts/app-layout';
 import { Head, useForm } from '@inertiajs/react';
-import { useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import type { BreadcrumbItem } from '@/types';
 import { Card } from '@/components/ui/card';
 import { OnChangePlugin } from '@lexical/react/LexicalOnChangePlugin';
 import { EditorState } from 'lexical';
-
 import { LexicalComposer } from '@lexical/react/LexicalComposer';
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
 import { ContentEditable } from '@lexical/react/LexicalContentEditable';
 import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 import { AutoFocusPlugin } from '@lexical/react/LexicalAutoFocusPlugin';
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary';
-
 import ToolbarPlugin from '@/plugins/ToolbarPlugin';
 import ExampleTheme from '@/plugins/ExampleTheme';
 import { ParagraphNode, TextNode } from 'lexical';
 import { ListPlugin  } from '@lexical/react/LexicalListPlugin';
 import { ListNode, ListItemNode } from '@lexical/list';
-
-import { X } from 'lucide-react';  // ikona X do usuwania zdjęcia
+import RemoveEmptyListPlugin from '@/plugins/RemoveEmptyListPlugin';
+import { X } from 'lucide-react';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -94,6 +92,7 @@ export default function CreateService() {
                             <Input
                                 type="number"
                                 step="0.01"
+                                max="999"
                                 value={data.price}
                                 onChange={(e) => setData('price', e.target.value)}
                                 className="w-full"
@@ -110,7 +109,7 @@ export default function CreateService() {
                                 ref={fileInputRef}
                                 onChange={(e) => {
                                     const file = e.target.files?.[0] ?? null;
-                                    setData('image', file);
+                                    setData('image_path', file);
 
                                     if (file) {
                                         const reader = new FileReader();
@@ -140,7 +139,7 @@ export default function CreateService() {
                                         type="button"
                                         onClick={() => {
                                             setImagePreview(null);
-                                            setData('image', null);
+                                            setData('image_path', null);
                                             if (fileInputRef.current) {
                                                 fileInputRef.current.value = '';
                                             }
@@ -166,7 +165,7 @@ export default function CreateService() {
                                                 <ContentEditable
                                                     id="contentEditable"
                                                     className="outline-none w-full min-h-[100px]"
-                                                />
+                                                /> as React["JSX.Element"]
                                             }
                                             placeholder={
                                                 <div className="text-gray-400 absolute pointer-events-none">
@@ -178,6 +177,7 @@ export default function CreateService() {
                                         <OnChangePlugin onChange={onEditorChange} />
                                         <HistoryPlugin />
                                         <ListPlugin />
+                                        <RemoveEmptyListPlugin />
                                         <AutoFocusPlugin />
                                     </div>
                                 </div>

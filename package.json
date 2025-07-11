@@ -25,6 +25,7 @@
     "dependencies": {
         "@headlessui/react": "^2.2.0",
         "@inertiajs/react": "^2.0.0",
+        "@lexical/html": "^0.33.1",
         "@lexical/list": "^0.32.1",
         "@lexical/react": "^0.32.1",
         "@lexical/rich-text": "^0.32.1",
@@ -55,6 +56,7 @@
         "lucide-react": "^0.475.0",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
+        "recharts": "^3.0.2",
         "tailwind-merge": "^3.0.1",
         "tailwindcss": "^4.1.8",
         "tailwindcss-animate": "^1.0.7",
