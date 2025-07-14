@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 
 class Service extends Model
 {
-    protected $fillable = ['name', 'slug', 'description', 'image_path', 'price'];
+    protected $fillable = ['name', 'slug', 'short_description', 'description', 'image_path', 'price'];
 
     protected static function booted(): void
     {
@@ -28,9 +28,9 @@ class Service extends Model
 
     public function getURLImage()
     {
-        if (str_starts_with($this->image_path, 'http')) {
-            return $this->image_path;
-        }
+        if ($this->image_path === null) return null;
+        if (str_starts_with($this->image_path, 'http')) return $this->image_path;
+
         return '/storage/' . $this->image_path;
     }
 

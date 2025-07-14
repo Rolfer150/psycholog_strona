@@ -1,20 +1,20 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render('home');
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/o-mnie', function () {
     return Inertia::render('about');
 })->name('about');
 
 Route::get('/uslugi-i-ceny', [ServiceController::class, 'public'])->name('services.public');
+Route::get('/uslugi-i-ceny/{service}', [ServiceController::class, 'show'])->name('services.show');
 
 Route::get('/kontakt', [MessageController::class, 'create'])->name('messages.create');
 Route::post('/kontakt/store', [MessageController::class, 'store'])->name('messages.store');

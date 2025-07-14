@@ -59,6 +59,13 @@ class ServiceController extends Controller
         return redirect()->route('services.index')->with('success', 'Usługa została dodana.');
     }
 
+    public function show(Service $service): Response
+    {
+        return Inertia::render('services/show', [
+            'service' => new ServiceResource($service),
+        ]);
+    }
+
     // Formularz edycji z ServiceResource
     public function edit(Service $service): Response
     {

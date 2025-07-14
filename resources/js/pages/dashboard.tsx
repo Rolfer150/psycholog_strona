@@ -50,19 +50,19 @@ export default function Dashboard() {
                             {/*    onClick={() => handleTypeChange('hour')}*/}
                             {/*>Godzina</button>*/}
                             <button
-                                className={`px-3 py-1 mx-1 rounded ${selectedType === 'day' ? 'bg-teal-400 text-white' : 'bg-gray-200 dark:bg-neutral-700'}`}
+                                className={`px-3 py-1 mx-1 cursor-pointer rounded ${selectedType === 'day' ? 'bg-teal-400 text-white' : 'bg-gray-200 dark:bg-neutral-700'}`}
                                 onClick={() => handleTypeChange('day')}
                             >Dzień</button>
                             <button
-                                className={`px-3 py-1 mx-1 rounded ${selectedType === 'week' ? 'bg-teal-400 text-white' : 'bg-gray-200 dark:bg-neutral-700'}`}
+                                className={`px-3 py-1 mx-1 cursor-pointer rounded ${selectedType === 'week' ? 'bg-teal-400 text-white' : 'bg-gray-200 dark:bg-neutral-700'}`}
                                 onClick={() => handleTypeChange('week')}
                             >Tydzień</button>
                             <button
-                                className={`px-3 py-1 mx-1 rounded ${selectedType === 'month' ? 'bg-teal-400 text-white' : 'bg-gray-200 dark:bg-neutral-700'}`}
+                                className={`px-3 py-1 mx-1 cursor-pointer rounded ${selectedType === 'month' ? 'bg-teal-400 text-white' : 'bg-gray-200 dark:bg-neutral-700'}`}
                                 onClick={() => handleTypeChange('month')}
                             >Miesiąc</button>
                             <button
-                                className={`px-3 py-1 mx-1 rounded ${selectedType === 'year' ? 'bg-teal-400 text-white' : 'bg-gray-200 dark:bg-neutral-700'}`}
+                                className={`px-3 py-1 mx-1 cursor-pointer rounded ${selectedType === 'year' ? 'bg-teal-400 text-white' : 'bg-gray-200 dark:bg-neutral-700'}`}
                                 onClick={() => handleTypeChange('year')}
                             >Rok</button>
                         </div>

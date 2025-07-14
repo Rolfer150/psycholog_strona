@@ -3,7 +3,7 @@ import { Link } from '@inertiajs/react';
 export default function Footer() {
     return (
         <footer className="bg-zinc-700 text-zinc-100 p-4">
-            <div className="p-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center place-items-center">
+            <div className="p-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center place-items-center my-16">
                 {/* Kolumna 1: Imię i zawód */}
                 <Link
                     href={route('home')}
@@ -48,7 +48,7 @@ export default function Footer() {
                 </div>
             </div>
 
-            <p className="text-center text-sm p-8 mt-4 border-t border-zinc-600">
+            <p className="text-center text-sm p-8 pt-12 border-t border-zinc-600">
                 © 2025 mgr Jakub Chrobak Psycholog. Wszelkie prawa zastrzeżone.
             </p>
         </footer>
