@@ -1,11 +1,47 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react'
+import clsx from 'clsx'
 
-const Header = ({ children }) => {
+function AnimateOnScroll({ children }: { children: React.ReactNode }) {
+    const ref = useRef<HTMLDivElement>(null)
+    const [visible, setVisible] = useState(false)
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setVisible(true)
+                    observer.disconnect()
+                }
+            },
+            { threshold: 0.2 }
+        )
+
+        if (ref.current) observer.observe(ref.current)
+
+        return () => observer.disconnect()
+    }, [])
+
     return (
-        <h1 className="flex items-center justify-center text-9xl md:text-8xl font-bold text-white bg-teal-400 text-center h-96">
+        <div
+            ref={ref}
+            className={clsx(
+                'transition-all duration-2000 ease-out opacity-0',
+                visible && 'opacity-100'
+            )}
+        >
             {children}
-        </h1>
-    );
-};
+        </div>
+    )
+}
 
-export default Header;
+const Header = ({ children }: { children: React.ReactNode }) => {
+    return (
+        <AnimateOnScroll>
+            <h1 className="flex items-center justify-center text-9xl md:text-8xl font-bold text-white bg-teal-400 text-center h-96">
+                {children}
+            </h1>
+        </AnimateOnScroll>
+    )
+}
+
+export default Header

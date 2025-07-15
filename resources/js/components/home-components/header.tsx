@@ -1,22 +1,68 @@
-import Navbar from '@/components/home-components/navbar';
-import { Button } from '../ui/button';
+import React, { useEffect, useRef, useState } from 'react';
+import clsx from 'clsx';
+
+function AnimateOnScroll({ children }: { children: React.ReactNode }) {
+    const ref = useRef<HTMLDivElement>(null);
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setVisible(true);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.2 }
+        );
+
+        if (ref.current) observer.observe(ref.current);
+
+        return () => observer.disconnect();
+    }, []);
+
+    return (
+        <div
+            ref={ref}
+            className={clsx(
+                'transition-all duration-2000 ease-out transform opacity-0',
+                visible && 'opacity-100'
+            )}
+        >
+            {children}
+        </div>
+    );
+}
 
 export default function Header({ title, description }: { title: string; description?: string }) {
-    return (
-        <header className="relative flex flex-col items-center justify-center min-h-[50vh] md:min-h-[60vh] bg-teal-400 text-white overflow-hidden">
-            <div className="max-w-5xl w-full px-6 text-center">
-                <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight drop-shadow-xl mb-6">
-                    {title}
-                </h1>
-                {description && (
-                    <p className="text-2xl md:text-3xl font-light max-w-3xl mx-auto opacity-90 drop-shadow">
-                        {description}
-                    </p>
-                )}
-            </div>
-            {/* Dekoracyjny element w tle */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[110vw] h-24 bg-white/10 rounded-t-full blur-2xl" />
-        </header>
-    );
+    const [line1, line2] = title.split(',');
 
+    return (
+        <AnimateOnScroll>
+            <header className="relative flex flex-col-reverse items-center justify-center gap-12 px-6 py-24 text-teal-600 md:flex-row md:gap-20 bg-white overflow-hidden min-h-screen mx-auto">
+                <div className="w-full md:w-2/3 flex flex-col p-4">
+                    <h1 className="mb-6 text-5xl font-extrabold leading-tight lg:text-7xl md:leading-tight text-center md:text-left">
+                        {line1.trim()},{<br />}
+                        {line2.trim()}
+                    </h1>
+                    {description && (
+                        <p className="max-w-2xl text-2xl lg:text-3xl font-light leading-snug opacity-90 drop-shadow-sm text-center md:text-left">
+                            {description}
+                        </p>
+                    )}
+                </div>
+
+                {/* Dekoracyjne zdjęcie */}
+                <div className="w-full md:w-1/3 flex justify-center items-center">
+                    <div className="aspect-[4/5] w-full max-w-md">
+                        <img
+                            src="/img/profile.jpg"
+                            alt="Zdjęcie psychologa"
+                            className="w-full h-full object-cover rounded-2xl shadow-lg"
+                        />
+                    </div>
+                </div>
+            </header>
+        </AnimateOnScroll>
+    );
 }

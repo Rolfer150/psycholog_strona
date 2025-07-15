@@ -66,6 +66,13 @@ class ServiceController extends Controller
         ]);
     }
 
+    public function adminShow(Service $service): Response
+    {
+        return Inertia::render('services/admin-show', [
+            'service' => new ServiceResource($service),
+        ]);
+    }
+
     // Formularz edycji z ServiceResource
     public function edit(Service $service): Response
     {

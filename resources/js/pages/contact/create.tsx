@@ -1,11 +1,13 @@
 import React, { useEffect, useRef } from 'react';
-import { Head, useForm } from '@inertiajs/react';
+import { Head, useForm, usePage } from '@inertiajs/react';
 import WebLayout from '@/layouts/web-layout';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import Header from '@/components/header';
 
 export default function Create() {
+    const { url } = usePage();
+
     // --- Referencje do animacji ---
     const contactRef = useRef<HTMLDivElement>(null);
     const formRef = useRef<HTMLFormElement>(null);
@@ -129,20 +131,28 @@ export default function Create() {
         );
         observer.observe(el);
 
-        // dodanie widgetu jeśli jeszcze nie istnieje
+        // --------- USUŃ POPRZEDNI SKRYPT ORAZ POPRZEDNI WIDGET ---------
         const scriptId = "zl-widget-script";
-        if (!document.getElementById(scriptId)) {
-            const script = document.createElement("script");
-            script.id = scriptId;
-            script.src = "//platform.docplanner.com/js/widget.js";
-            script.async = true;
-            document.body.appendChild(script);
+        const zlAnchor = document.getElementById("zl-url");
+        if (zlAnchor) {
+            zlAnchor.innerHTML = "Jakub Chrobak - ZnanyLekarz.pl"; // reset linka
         }
+        const oldScript = document.getElementById(scriptId);
+        if (oldScript) {
+            oldScript.remove();
+        }
+
+        // Zawsze dodaj nowy skrypt po montażu
+        const script = document.createElement("script");
+        script.id = scriptId;
+        script.src = "//platform.docplanner.com/js/widget.js";
+        script.async = true;
+        document.body.appendChild(script);
 
         return () => {
             observer.disconnect();
         };
-    }, []);
+    }, [url]);
 
 
 
@@ -150,7 +160,7 @@ export default function Create() {
         <>
             <Head title="Kontakt" />
             <Header>Kontakt</Header>
-            <div className="mx-auto max-w-6xl py-32">
+            <div key={url} className="mx-auto max-w-6xl py-32">
                 <section className="flex flex-col justify-center items-center gap-8 space-y-32 w-full">
                     {/* Dane kontaktowe z animacją */}
                     <div

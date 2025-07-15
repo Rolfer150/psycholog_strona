@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\MessageResource;
 use App\Models\Message;
+use App\Notifications\MessageSent;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -40,11 +42,16 @@ class MessageController extends Controller
             'slug' => \Str::slug($validated['name'] . '-' . now()->timestamp),
         ]);
 
-        return redirect()->back()->with('success', 'Dziękujemy za wiadomość!');
+        Notification::route('mail', 'TWÓJ_EMAIL@domena.pl')
+            ->notify(new MessageSent());
+
+        return redirect()->back()->with('success', 'Dziękujemy za Twoją wiadomość! Skontaktujemy się z Tobą tak szybko, jak to możliwe.');
     }
 
     public function show(Message $message): Response
     {
+        $message->read = true;
+        $message->save();
         return Inertia::render('contact/show', [
             'message' => new MessageResource($message),
         ]);

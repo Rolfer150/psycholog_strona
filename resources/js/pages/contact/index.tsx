@@ -18,6 +18,7 @@ export default function MessageIndex() {
                 name: string;
                 email: string;
                 text: string;
+                read: boolean;
                 created_at: string;
             }[];
             links: any[];
@@ -36,6 +37,7 @@ export default function MessageIndex() {
                             <th className="px-4 py-2 font-medium">Imię i nazwisko</th>
                             <th className="px-4 py-2 font-medium">Email</th>
                             <th className="px-4 py-2 font-medium">Treść</th>
+                            <th className="px-4 py-2 font-medium">Przeczytane</th>
                             <th className="px-4 py-2 font-medium">Data</th>
                             <th className="px-4 py-2 font-medium">Akcje</th>
                         </tr>
@@ -47,12 +49,16 @@ export default function MessageIndex() {
                             </tr>
                         )}
                         {messages.data.map((msg) => (
-                            <tr key={msg.id} className="border-b hover:bg-muted/30 transition">
+                            <tr
+                                key={msg.id}
+                                className={`border-b hover:bg-muted/30 transition ${!msg.read ? "font-bold" : "font-normal"}`}
+                            >
                                 <td className="px-4 py-3">{msg.name}</td>
                                 <td className="px-4 py-3">{msg.email}</td>
                                 <td className="px-4 py-3">
                                     {msg.text ? (msg.text.length > 120 ? msg.text.slice(0, 120) + '...' : msg.text) : ""}
                                 </td>
+                                <td className="px-4 py-3">{msg.read ? "Tak" : "Nie"}</td>
                                 <td className="px-4 py-3 text-muted-foreground">
                                     {msg.created_at && !isNaN(new Date(msg.created_at).getTime())
                                         ? new Date(msg.created_at).toLocaleString('pl-PL')

@@ -25,6 +25,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::prefix('dashboard/services')->name('services.')->group(function () {
         Route::get('/', [ServiceController::class, 'index'])->name('index');
         Route::get('/create', [ServiceController::class, 'create'])->name('create');
+        Route::get('/show/{service}', [ServiceController::class, 'adminShow'])->name('admin-show');
         Route::get('/edit/{service}', [ServiceController::class, 'edit'])->name('edit');
         Route::post('/', [ServiceController::class, 'store'])->name('store');
         Route::put('/{service}', [ServiceController::class, 'update'])->name('update');

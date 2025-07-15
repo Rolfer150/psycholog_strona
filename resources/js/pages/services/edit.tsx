@@ -23,10 +23,8 @@ import LexicalHtmlImportPlugin from '@/plugins/LexicalHtmlImportPlugin';
 import { X } from 'lucide-react';
 
 const breadcrumbs: BreadcrumbItem[] = [
-    {
-        title: 'Edytuj usługę',
-        href: '/dashboard/services',
-    },
+    { title: 'Usługi', href: '/dashboard/services', },
+    { title: 'Edytuj usługę', href: '#', },
 ];
 
 const editorConfig = {
