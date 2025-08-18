@@ -37,7 +37,7 @@ export default function AdminShowService({ service }: AdminShowServiceProps) {
                     {/* Nazwa i cena */}
                     <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6 gap-3">
                         <span className="text-2xl font-bold text-zinc-800 dark:text-white">{s.name}</span>
-                        <span className="text-xl font-semibold text-teal-500">{s.price_formatted || s.price + ' zł'}</span>
+                        <span className="text-xl font-semibold text-brown-500">{s.price_formatted || s.price + ' zł'}</span>
                     </div>
 
                     {/* Obrazek */}
@@ -46,14 +46,14 @@ export default function AdminShowService({ service }: AdminShowServiceProps) {
                             <img
                                 src={s.image_path}
                                 alt={s.name}
-                                className="max-h-64 rounded-xl shadow border border-teal-200 dark:border-teal-800 object-cover"
+                                className="max-h-64 rounded-xl shadow border border-brown-200 dark:border-brown-800 object-cover"
                             />
                         </div>
                     )}
 
                     {/* Opis skrócony */}
                     {s.short_description && (
-                        <div className="mb-4 p-4 bg-teal-50 dark:bg-neutral-800 rounded text-base text-zinc-700 dark:text-zinc-200">
+                        <div className="mb-4 p-4 bg-brown-50 dark:bg-neutral-800 rounded text-base text-zinc-700 dark:text-zinc-200">
                             <div dangerouslySetInnerHTML={{ __html: s.short_description }} />
                         </div>
                     )}

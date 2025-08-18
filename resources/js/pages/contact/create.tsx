@@ -168,7 +168,7 @@ export default function Create() {
                         className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full text-white min-h-[50vh]"
                     >
                         {/* Adres */}
-                        <div className="p-6 rounded-xl shadow-lg bg-teal-400">
+                        <div className="p-6 rounded-xl shadow-lg bg-brown-400">
                             <h2 className="text-6xl font-semibold my-12 text-center">Adres</h2>
                             <a
                                 href="https://www.google.com/maps/place/Krakowska+66,+34-400+Nowy+Targ"
@@ -190,7 +190,7 @@ export default function Create() {
                         </div>
 
                         {/* E-mail */}
-                        <div className="p-6 rounded-xl shadow-lg bg-teal-400">
+                        <div className="p-6 rounded-xl shadow-lg bg-brown-400">
                             <h2 className="text-6xl font-semibold my-12 text-center">E-mail</h2>
                             <a href="mailto:adres@email.pl" className="group block" rel="noopener noreferrer">
                                 <div className="grid place-items-center">
@@ -206,7 +206,7 @@ export default function Create() {
                         </div>
 
                         {/* Telefon */}
-                        <div className="p-6 rounded-xl shadow-lg bg-teal-400">
+                        <div className="p-6 rounded-xl shadow-lg bg-brown-400">
                             <h2 className="text-6xl font-semibold my-12 text-center">Telefon</h2>
                             <a href="tel:123456789" className="group block" rel="noopener noreferrer">
                                 <div className="grid place-items-center">
@@ -224,7 +224,7 @@ export default function Create() {
 
                     {/* Widget ze ZnanyLekarz.pl z animacją fade-in */}
                     <div ref={znanylekarzRef} className="w-full md:w-2/3">
-                        <h2 className="text-5xl font-semibold text-center text-teal-400">Złóż wizytę przez platformę ZnanyLekarz.pl</h2>
+                        <h2 className="text-5xl font-semibold text-center text-brown-400">Złóż wizytę przez platformę ZnanyLekarz.pl</h2>
                         <div className="bg-white rounded-xl shadow-lg p-6 mt-12 flex justify-center items-center">
                             <a
                                 id="zl-url"
@@ -245,8 +245,8 @@ export default function Create() {
 
                     {/* Formularz z animacją fade-in */}
                     <div ref={formRef} className="w-full md:w-2/3">
-                        <h2 className="text-5xl font-semibold text-center text-teal-400">lub</h2>
-                        <h2 className="text-5xl font-semibold text-center text-teal-400">napisz wiadomość</h2>
+                        <h2 className="text-5xl font-semibold text-center text-brown-400">lub</h2>
+                        <h2 className="text-5xl font-semibold text-center text-brown-400">napisz wiadomość</h2>
                         <form
                             onSubmit={handleSubmit}
                             className="bg-white rounded-xl shadow-lg p-6 mt-12 space-y-6"
@@ -261,7 +261,7 @@ export default function Create() {
                                     name="name"
                                     value={data.name}
                                     onChange={e => setData('name', e.target.value)}
-                                    className="w-full border border-zinc-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 focus:outline-none p-2 rounded-md"
+                                    className="w-full border border-zinc-300 shadow-sm focus:border-brown-500 focus:ring-brown-500 focus:outline-none p-2 rounded-md"
                                     required
                                 />
                                 {errors.name && <div className="text-red-600 text-sm">{errors.name}</div>}
@@ -276,7 +276,7 @@ export default function Create() {
                                     name="email"
                                     value={data.email}
                                     onChange={e => setData('email', e.target.value)}
-                                    className="w-full border border-zinc-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 focus:outline-none p-2 rounded-md"
+                                    className="w-full border border-zinc-300 shadow-sm focus:border-brown-500 focus:ring-brown-500 focus:outline-none p-2 rounded-md"
                                     required
                                 />
                                 {errors.email && <div className="text-red-600 text-sm">{errors.email}</div>}
@@ -291,7 +291,7 @@ export default function Create() {
                                     rows={5}
                                     value={data.text}
                                     onChange={e => setData('text', e.target.value)}
-                                    className="w-full border border-zinc-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 focus:outline-none p-2 rounded-md"
+                                    className="w-full border border-zinc-300 shadow-sm focus:border-brown-500 focus:ring-brown-500 focus:outline-none p-2 rounded-md"
                                     required
                                 />
                                 {errors.text && <div className="text-red-600 text-sm">{errors.text}</div>}
@@ -299,7 +299,7 @@ export default function Create() {
                             <button
                                 type="submit"
                                 disabled={processing}
-                                className="w-full py-3 border-teal-400 border bg-teal-400 text-white text-lg font-semibold rounded-md cursor-pointer transition-all duration-300 ease-in-out hover:bg-transparent hover:text-teal-400 hover:shadow-sm"
+                                className="w-full py-3 border-brown-400 border bg-brown-400 text-white text-lg font-semibold rounded-md cursor-pointer transition-all duration-300 ease-in-out hover:bg-transparent hover:text-brown-400 hover:shadow-sm"
                             >
                                 {processing ? 'Wysyłanie...' : 'Wyślij wiadomość'}
                             </button>

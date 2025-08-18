@@ -67,7 +67,7 @@ export default function MessageIndex() {
                                 <td className="px-4 py-3">
                                     <Link
                                         href={route('messages.show', msg.id)}
-                                        className="text-teal-600 hover:underline"
+                                        className="text-brown-600 hover:underline"
                                     >
                                         Otwórz
                                     </Link>
@@ -84,7 +84,7 @@ export default function MessageIndex() {
                                 href={link.url ?? '#'}
                                 className={`px-3 py-1 rounded ${
                                     link.active
-                                        ? 'bg-teal-500 text-white'
+                                        ? 'bg-brown-500 text-white'
                                         : 'bg-gray-100 dark:bg-neutral-700'
                                 } ${!link.url && 'pointer-events-none opacity-50'}`}
                                 dangerouslySetInnerHTML={{ __html: link.label }}

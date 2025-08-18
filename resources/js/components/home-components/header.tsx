@@ -39,7 +39,7 @@ export default function Header({ title, description }: { title: string; descript
 
     return (
         <AnimateOnScroll>
-            <header className="relative flex flex-col-reverse items-center justify-center gap-12 px-6 py-24 text-teal-600 md:flex-row md:gap-20 bg-white overflow-hidden min-h-screen mx-auto">
+            <header className="relative flex flex-col-reverse items-center justify-center gap-12 px-6 py-12 text-brown-400 md:flex-row md:gap-20 bg-[#FDFAF5] overflow-hidden min-h-screen mx-auto">
                 <div className="w-full md:w-2/3 flex flex-col p-4">
                     <h1 className="mb-6 text-5xl font-extrabold leading-tight lg:text-7xl md:leading-tight text-center md:text-left">
                         {line1.trim()},{<br />}
@@ -56,9 +56,9 @@ export default function Header({ title, description }: { title: string; descript
                 <div className="w-full md:w-1/3 flex justify-center items-center">
                     <div className="aspect-[4/5] w-full max-w-md">
                         <img
-                            src="/img/profile.jpg"
+                            src="/img/logo.png"
                             alt="Zdjęcie psychologa"
-                            className="w-full h-full object-cover rounded-2xl shadow-lg"
+                            className="w-full h-full object-cover rounded-2xl"
                         />
                     </div>
                 </div>

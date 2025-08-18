@@ -70,7 +70,7 @@ export default function ShowService({ service }: ServiceShowProps) {
                             <img
                                 src={service.data.image_path!}
                                 alt={service.data.name}
-                                className="max-h-96 w-auto rounded-2xl shadow-xl object-cover border border-teal-300"
+                                className="max-h-96 w-auto rounded-2xl shadow-xl object-cover border border-brown-300"
                             />
                         </div>
                     ) : null}

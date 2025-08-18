@@ -37,7 +37,7 @@ function AnimateOnScroll({ children }: { children: React.ReactNode }) {
 const Header = ({ children }: { children: React.ReactNode }) => {
     return (
         <AnimateOnScroll>
-            <h1 className="flex items-center justify-center text-9xl md:text-8xl font-bold text-white bg-teal-400 text-center h-96">
+            <h1 className="flex items-center justify-center text-9xl md:text-8xl font-bold text-white bg-brown-400 text-center h-96 mb-36">
                 {children}
             </h1>
         </AnimateOnScroll>

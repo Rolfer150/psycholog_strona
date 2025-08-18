@@ -37,17 +37,17 @@ export default function Heading() {
     };
 
     return (
-        <nav className="sticky top-0 z-50 bg-white shadow-sm w-full">
+        <nav className="sticky top-0 z-50 bg-[#FDFAF5] shadow-sm w-full">
             {/* Header z nazwą i hamburgerem */}
-            <div className="flex items-center justify-between md:hidden px-6 py-4 h-20">
-                <span className="text-2xl font-bold text-teal-500">Jakub Chrobak Psycholog</span>
+            <div className="flex items-center justify-between md:hidden px-8 py-4 h-20">
                 <button
                     className="flex flex-col justify-center items-center group"
                     onClick={() => setOpen(!open)}
                     aria-label="Otwórz menu"
                 >
-                    {open ? <X size={32} className="text-teal-500" /> : <Menu size={32} className="text-teal-500" />}
+                    {open ? <X size={32} className="text-brown-700" /> : <Menu size={32} className="text-brown-700" />}
                 </button>
+                <span className="text-2xl font-bold text-brown-700">Jakub Chrobak Psycholog</span>
             </div>
 
             {/* Mobile Drawer + przezroczyste tło na klik */}
@@ -58,7 +58,7 @@ export default function Heading() {
             >
                 <aside
                     className={`
-                        fixed left-0 top-20 min-h-screen w-3/4 max-w-xs bg-white z-50 shadow-lg
+                        fixed left-0 top-20 min-h-screen w-3/4 max-w-xs bg-white border-r-2 border-[#FDFAF5] z-50 shadow-sm
                         transition-transform duration-300 ease-in-out
                         ${open ? 'translate-x-0' : '-translate-x-full'}
                         md:hidden
@@ -70,15 +70,13 @@ export default function Heading() {
                             <Link
                                 key={path}
                                 href={href}
-                                className={`group transition duration-300 ${
-                                    isActive(path) ? 'text-teal-400' : 'text-zinc-800'
-                                }`}
+                                className="group transition duration-300 text-brown-700"
                                 onClick={() => setOpen(false)}
                             >
                                 {label}
                                 <span
-                                    className={`block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 ${
-                                        isActive(path) ? 'bg-teal-400' : 'bg-zinc-700'
+                                    className={`block group-hover:max-w-full h-0.5 bg-brown-600 ${
+                                        !isActive(path) && 'max-w-0 transition-all duration-500'
                                     }`}
                                 ></span>
                             </Link>
@@ -93,14 +91,12 @@ export default function Heading() {
                     <Link
                         key={path}
                         href={href}
-                        className={`group transition duration-300 ${
-                            isActive(path) ? 'text-teal-400' : 'text-zinc-800'
-                        }`}
+                        className="group transition duration-300 text-brown-700"
                     >
                         {label}
                         <span
-                            className={`block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 ${
-                                isActive(path) ? 'bg-teal-400' : 'bg-zinc-700'
+                            className={`block group-hover:max-w-full h-0.5 bg-brown-600 ${
+                                !isActive(path) && 'max-w-0 transition-all duration-500'
                             }`}
                         ></span>
                     </Link>

@@ -74,7 +74,7 @@ export default function Home() {
                         ref={aboutRef}
                         className="mx-auto max-w-4xl px-6 py-32 min-h-screen text-zinc-800"
                     >
-                        <h2 className="text-5xl md:text-6xl font-bold text-center text-teal-500 mb-12">
+                        <h2 className="text-5xl md:text-6xl font-bold text-center text-brown-500 mb-12">
                             Witam
                         </h2>
 
@@ -87,7 +87,7 @@ export default function Home() {
                                 Wspieram osoby zmagające się z trudnościami emocjonalnymi, problemami w relacjach czy stresem dnia codziennego. W pracy koncentruję się na głębszym zrozumieniu Twoich doświadczeń, emocji i potrzeb, aby wspólnie szukać trwałej zmiany i ulgi w cierpieniu.
                             </p>
 
-                            <p className="text-zinc-700 italic border-l-4 border-teal-300 pl-4">
+                            <p className="text-zinc-700 italic border-l-4 border-brown-300 pl-4">
                                 Zapraszam do kontaktu – pierwsza rozmowa może być ważnym krokiem w stronę lepszego samopoczucia.
                             </p>
                         </div>
@@ -96,17 +96,17 @@ export default function Home() {
 
                     <div
                         ref={homeServicesRef}
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 min-h-screen mx-auto bg-white gap-6 py-32"
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 min-h-screen mx-auto bg-white gap-x-6 gap-y-18 py-32"
                     >
                         {services.map(service => (
                             <div
                                 key={service.id}
                                  className="fade-in-section opacity-0 translate-y-8 transition-all duration-700 ease-out p-8 text-center text-black"
                             >
-                                <h3 className="text-2xl font-semibold text-teal-600 text-center p-4 mt-4 h-26">{service.name}</h3>
+                                <h3 className="text-2xl font-semibold text-brown-600 text-center p-4 mt-4 h-26">{service.name}</h3>
                                 <Link
                                     href={route('services.show', service.id)}
-                                    className="border-teal-400 border bg-teal-400 text-white px-6 py-4 text-xl rounded-md transition-all duration-300 ease-in-out hover:bg-transparent hover:text-teal-400 hover:shadow-sm"
+                                    className="border-brown-400 border bg-brown-400 text-white px-6 py-4 text-xl rounded-md transition-all duration-300 ease-in-out hover:bg-transparent hover:text-brown-400 hover:shadow-sm"
                                 >
                                     Zobacz więcej
                                 </Link>

@@ -31,7 +31,7 @@ class ServiceSeeder extends Seeder
                         <p><strong>Konsultacja psychologiczna</strong> to indywidualne spotkanie z psychologiem, które ma na celu omówienie Twoich aktualnych trudności, emocji i sytuacji życiowej. To przestrzeń, w której możesz poczuć się wysłuchany i zrozumiany, a także uzyskać pierwsze wskazówki dotyczące dalszego postępowania.</p>
                         <p>Konsultacja trwa zazwyczaj 50 minut i może mieć charakter jednorazowy lub być początkiem dłuższej współpracy terapeutycznej.</p>
                         <p><strong>Dla kogo?</strong></p>
-                        <ul class="list-disc marker:text-teal-400 ml-6 space-y-1">
+                        <ul class="list-disc marker:text-brown-400 ml-6 space-y-1">
                             <li>dla osób doświadczających stresu, niepokoju lub obniżonego nastroju,</li>
                             <li>dla tych, którzy przeżywają trudności w relacjach osobistych lub zawodowych,</li>
                             <li>dla osób poszukujących wsparcia w rozwiązywaniu problemów emocjonalnych i życiowych.</li>
@@ -52,7 +52,7 @@ class ServiceSeeder extends Seeder
                         <p>Podczas sesji online masz możliwość omówienia swoich trudności, otrzymania wsparcia emocjonalnego oraz wstępnej diagnozy bez konieczności wychodzenia z domu.</p>
                         <p><strong>Długość i przebieg:</strong> Konsultacja trwa zwykle 50 minut i odbywa się na wybranej platformie do wideorozmów (np. Zoom, Google Meet).</p>
                         <p><strong>Dla kogo?</strong></p>
-                        <ul class="list-disc marker:text-teal-400 ml-6 space-y-1">
+                        <ul class="list-disc marker:text-brown-400 ml-6 space-y-1">
                             <li>dla osób ceniących wygodę i elastyczność,</li>
                             <li>dla tych, którzy mają ograniczony dostęp do gabinetu psychologa,</li>
                             <li>dla osób z obszarów o utrudnionym dostępie do specjalistów,</li>
@@ -73,7 +73,7 @@ class ServiceSeeder extends Seeder
                         <p><strong>Psychologiczne wsparcie doradcze</strong> to specjalistyczna pomoc skoncentrowana na rozwiązywaniu konkretnych problemów oraz wspieraniu w podejmowaniu ważnych decyzji życiowych i zawodowych.</p>
                         <p>Podczas spotkań doradczych psycholog pomaga spojrzeć na sytuację z różnych perspektyw, identyfikuje przeszkody i zasoby oraz wspólnie z Tobą szuka praktycznych rozwiązań.</p>
                         <p><strong>Dla kogo?</strong></p>
-                        <ul class="list-disc marker:text-teal-400 ml-6 space-y-1">
+                        <ul class="list-disc marker:text-brown-400 ml-6 space-y-1">
                             <li>dla osób stojących przed ważnymi wyborami życiowymi lub zawodowymi,</li>
                             <li>dla tych, którzy chcą lepiej zarządzać stresem i emocjami w sytuacjach wymagających decyzji,</li>
                             <li>dla osób potrzebujących wsparcia w rozwiązywaniu konfliktów i problemów interpersonalnych.</li>
@@ -93,7 +93,7 @@ class ServiceSeeder extends Seeder
                         <p><strong>Wsparcie psychologiczne w kryzysie</strong> to pomoc skierowana do osób doświadczających nagłych, trudnych sytuacji życiowych, które powodują silny stres, poczucie bezradności lub zagrożenia.</p>
                         <p>Podczas spotkań oferuję bezpieczną przestrzeń do wyrażenia emocji, zrozumienia sytuacji oraz znalezienia sposobów radzenia sobie z kryzysem.</p>
                         <p><strong>Dla kogo?</strong></p>
-                        <ul class="list-disc marker:text-teal-400 ml-6 space-y-1">
+                        <ul class="list-disc marker:text-brown-400 ml-6 space-y-1">
                             <li>dla osób po utracie bliskiej osoby,</li>
                             <li>dla tych, którzy doświadczyli traumatycznych wydarzeń,</li>
                             <li>dla osób przeżywających kryzys emocjonalny, zawodowy lub życiowy,</li>
@@ -114,7 +114,7 @@ class ServiceSeeder extends Seeder
                         <p><strong>Szybka konsultacja psychologiczna</strong> to krótka, intensywna sesja przeznaczona dla osób potrzebujących szybkiej pomocy, wsparcia lub porady w konkretnej sytuacji.</p>
                         <p>Spotkanie trwa około 30 minut i pozwala na szybkie omówienie problemu, uzyskanie wskazówek oraz ustalenie dalszych kroków.</p>
                         <p><strong>Dla kogo?</strong></p>
-                        <ul class="list-disc marker:text-teal-400 ml-6 space-y-1">
+                        <ul class="list-disc marker:text-brown-400 ml-6 space-y-1">
                             <li>dla osób potrzebujących natychmiastowego wsparcia psychologicznego,</li>
                             <li>dla tych, którzy chcą szybko skonsultować sytuację lub uzyskać poradę,</li>
                             <li>dla osób, które nie mogą od razu podjąć dłuższej terapii, ale potrzebują pomocy „tu i teraz”.</li>
@@ -134,7 +134,7 @@ class ServiceSeeder extends Seeder
                         <p><strong>Psychological consultation in English</strong> offers professional psychological support for English-speaking clients seeking help in a comfortable and confidential setting.</p>
                         <p>The consultation typically lasts 50 minutes and can be a one-time session or the start of ongoing therapeutic work.</p>
                         <p><strong>Who is it for?</strong></p>
-                        <ul class="list-disc marker:text-teal-400 ml-6 space-y-1">
+                        <ul class="list-disc marker:text-brown-400 ml-6 space-y-1">
                             <li>for individuals experiencing stress, anxiety, or emotional challenges,</li>
                             <li>for those going through personal or professional crises,</li>
                             <li>for people seeking to better understand themselves and their needs in English.</li>

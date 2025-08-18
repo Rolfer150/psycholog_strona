@@ -6,7 +6,7 @@ export default function WebLayout({ children }) {
     return (
         <>
             <Navbar />
-            <main className="min-h-screen bg-zinc-50 text-zinc-800">
+            <main className="min-h-screen bg-zinc-50 text-zinc-400">
                 {children}
             </main>
             <Footer />

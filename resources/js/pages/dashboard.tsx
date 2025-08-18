@@ -28,15 +28,15 @@ export default function Dashboard() {
                 <div className="grid auto-rows-min gap-4 md:grid-cols-3">
                     {/* Liczniki */}
                     <div className="border-sidebar-border/70 dark:border-sidebar-border relative aspect-video overflow-hidden rounded-xl border flex flex-col items-center justify-center">
-                        <span className="text-5xl font-bold text-teal-500">{visits_today}</span>
+                        <span className="text-5xl font-bold text-brown-500">{visits_today}</span>
                         <span className="mt-2 text-lg">Wizyty dzisiaj</span>
                     </div>
                     <div className="border-sidebar-border/70 dark:border-sidebar-border relative aspect-video overflow-hidden rounded-xl border flex flex-col items-center justify-center">
-                        <span className="text-5xl font-bold text-teal-500">{visits_lastHour}</span>
+                        <span className="text-5xl font-bold text-brown-500">{visits_lastHour}</span>
                         <span className="mt-2 text-lg">Wizyty ostatnia godzina</span>
                     </div>
                     <div className="border-sidebar-border/70 dark:border-sidebar-border relative aspect-video overflow-hidden rounded-xl border flex flex-col items-center justify-center">
-                        <span className="text-5xl font-bold text-teal-500">{visits_total}</span>
+                        <span className="text-5xl font-bold text-brown-500">{visits_total}</span>
                         <span className="mt-2 text-lg">Wizyt ogółem</span>
                     </div>
                 </div>
@@ -46,23 +46,23 @@ export default function Dashboard() {
                         <h2 className="text-xl font-bold">Statystyki odwiedzin</h2>
                         <div>
                             {/*<button*/}
-                            {/*    className={`px-3 py-1 mx-1 rounded ${selectedType === 'hour' ? 'bg-teal-400 text-white' : 'bg-gray-200 dark:bg-neutral-700'}`}*/}
+                            {/*    className={`px-3 py-1 mx-1 rounded ${selectedType === 'hour' ? 'bg-brown-400 text-white' : 'bg-gray-200 dark:bg-neutral-700'}`}*/}
                             {/*    onClick={() => handleTypeChange('hour')}*/}
                             {/*>Godzina</button>*/}
                             <button
-                                className={`px-3 py-1 mx-1 cursor-pointer rounded ${selectedType === 'day' ? 'bg-teal-400 text-white' : 'bg-gray-200 dark:bg-neutral-700'}`}
+                                className={`px-3 py-1 mx-1 cursor-pointer rounded ${selectedType === 'day' ? 'bg-brown-400 text-white' : 'bg-gray-200 dark:bg-neutral-700'}`}
                                 onClick={() => handleTypeChange('day')}
                             >Dzień</button>
                             <button
-                                className={`px-3 py-1 mx-1 cursor-pointer rounded ${selectedType === 'week' ? 'bg-teal-400 text-white' : 'bg-gray-200 dark:bg-neutral-700'}`}
+                                className={`px-3 py-1 mx-1 cursor-pointer rounded ${selectedType === 'week' ? 'bg-brown-400 text-white' : 'bg-gray-200 dark:bg-neutral-700'}`}
                                 onClick={() => handleTypeChange('week')}
                             >Tydzień</button>
                             <button
-                                className={`px-3 py-1 mx-1 cursor-pointer rounded ${selectedType === 'month' ? 'bg-teal-400 text-white' : 'bg-gray-200 dark:bg-neutral-700'}`}
+                                className={`px-3 py-1 mx-1 cursor-pointer rounded ${selectedType === 'month' ? 'bg-brown-400 text-white' : 'bg-gray-200 dark:bg-neutral-700'}`}
                                 onClick={() => handleTypeChange('month')}
                             >Miesiąc</button>
                             <button
-                                className={`px-3 py-1 mx-1 cursor-pointer rounded ${selectedType === 'year' ? 'bg-teal-400 text-white' : 'bg-gray-200 dark:bg-neutral-700'}`}
+                                className={`px-3 py-1 mx-1 cursor-pointer rounded ${selectedType === 'year' ? 'bg-brown-400 text-white' : 'bg-gray-200 dark:bg-neutral-700'}`}
                                 onClick={() => handleTypeChange('year')}
                             >Rok</button>
                         </div>

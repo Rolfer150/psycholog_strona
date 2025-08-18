@@ -46,7 +46,7 @@ export default function Services() {
             <div className="mx-auto max-w-6xl py-32">
                 <section
                     ref={sectionRef}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-18"
                 >
                     {services.map(service => (
                         <div
@@ -58,12 +58,12 @@ export default function Services() {
                                 className="text-zinc-600 my-2 md:h-36"
                                 dangerouslySetInnerHTML={{ __html: service.short_description ?? '' }}
                             ></div>
-                            <h3 className="text-2xl text-teal-400 font-bold">Cena</h3>
-                            <p className="text-xl text-teal-400 font-bold mb-6">{service.price}</p>
+                            <h3 className="text-2xl text-brown-400 font-bold">Cena</h3>
+                            <p className="text-xl text-brown-400 font-bold mb-6">{service.price}</p>
 
                             <Link
                                 href={route('services.show', service.id)}
-                                className="border-teal-400 border bg-teal-400 text-white px-6 py-4 text-xl rounded-md transition-all duration-300 ease-in-out hover:bg-transparent hover:text-teal-400 hover:shadow-sm"
+                                className="border-brown-400 border bg-brown-400 text-white px-6 py-4 text-xl rounded-md transition-all duration-300 ease-in-out hover:bg-transparent hover:text-brown-400 hover:shadow-sm"
                             >
                                 Zobacz więcej
                             </Link>

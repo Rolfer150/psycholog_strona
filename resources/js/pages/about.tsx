@@ -48,7 +48,7 @@ export default function About() {
                         <img
                             src="/img/profile.jpg"
                             alt="Zdjęcie psychologa"
-                            className="w-full rounded-2xl object-cover shadow-lg"
+                            className="w-full rounded-lg object-cover shadow-lg"
                         />
                     </aside>
 
@@ -66,8 +66,8 @@ export default function About() {
                 <section ref={section2Ref} className="flex flex-col gap-12 md:flex-row md:items-start text-zinc-800">
                     <article className="w-full md:w-2/3 space-y-6 text-lg leading-relaxed">
                         <div>
-                            <h2 className="mb-2 text-xl font-semibold text-teal-600">Pomagam osobom, które:</h2>
-                            <ul className="list-disc list-inside space-y-1 marker:text-teal-400">
+                            <h2 className="mb-2 text-xl font-semibold text-brown-600">Pomagam osobom, które:</h2>
+                            <ul className="list-disc list-inside space-y-1 marker:text-brown-400">
                                 <li>czują się zablokowane emocjonalnie,</li>
                                 <li>zmagają się z lękiem, poczuciem winy lub pustki,</li>
                                 <li>trudno im być w kontakcie ze sobą lub innymi,</li>
@@ -81,24 +81,24 @@ export default function About() {
 
                     <aside className="w-full md:w-1/3 space-y-6">
                         <div>
-                            <h2 className="mb-2 text-xl font-semibold text-teal-600">Znajomość języków:</h2>
-                            <ul className="list-disc list-inside space-y-1 marker:text-teal-400">
+                            <h2 className="mb-2 text-xl font-semibold text-brown-600">Znajomość języków:</h2>
+                            <ul className="list-disc list-inside space-y-1 marker:text-brown-400">
                                 <li>polski</li>
                                 <li>angielski</li>
                             </ul>
                         </div>
 
                         <div>
-                            <h2 className="mb-2 text-xl font-semibold text-teal-600">Doświadczenie:</h2>
-                            <ul className="list-disc list-inside space-y-1 marker:text-teal-400">
+                            <h2 className="mb-2 text-xl font-semibold text-brown-600">Doświadczenie:</h2>
+                            <ul className="list-disc list-inside space-y-1 marker:text-brown-400">
                                 <li>SP4 w Nowym Targu – od 02.09.2024 (obecnie)</li>
                                 <li>ZSE w Nowym Targu – od 01.02.2025 (obecnie)</li>
                             </ul>
                         </div>
 
                         <div>
-                            <h2 className="mb-2 text-xl font-semibold text-teal-600">Edukacja:</h2>
-                            <ul className="list-disc list-inside space-y-1 marker:text-teal-400">
+                            <h2 className="mb-2 text-xl font-semibold text-brown-600">Edukacja:</h2>
+                            <ul className="list-disc list-inside space-y-1 marker:text-brown-400">
                                 <li>Magister psychologii – Uniwersytet Jagielloński</li>
                             </ul>
                         </div>
@@ -106,9 +106,9 @@ export default function About() {
                 </section>
 
                 {/* Sekcja 3 */}
-                <section ref={section3Ref} className="rounded-2xl border border-zinc-200 bg-zinc-50 p-8 shadow-md md:p-10">
-                    <h2 className="mb-6 text-2xl font-semibold text-teal-600">Moja ścieżka zawodowa i zasady pracy</h2>
-                    <ul className="list-disc list-inside space-y-3 text-lg leading-relaxed text-zinc-700 marker:text-teal-400">
+                <section ref={section3Ref} className="rounded-lg border border-zinc-200 bg-zinc-50 p-8 shadow-md md:p-10">
+                    <h2 className="mb-6 text-2xl font-semibold text-brown-600">Moja ścieżka zawodowa i zasady pracy</h2>
+                    <ul className="list-disc list-inside space-y-3 text-lg leading-relaxed text-zinc-700 marker:text-brown-400">
                         <li>Pracuję pod stałą superwizją.</li>
                         <li>Ukończyłem studia psychologiczne na Uniwersytecie Jagiellońskim.</li>
                         <li>W pracy kieruję się zasadami etyki zawodu psychologa.</li>

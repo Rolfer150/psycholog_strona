@@ -56,13 +56,13 @@ export default function ServiceIndex() {
                                 <td className="px-4 py-3 space-x-2">
                                     <Link
                                         href={route('services.admin-show', service.id)}
-                                        className="text-teal-600 hover:underline"
+                                        className="text-brown-600 hover:underline"
                                     >
                                         Otwórz
                                     </Link>
                                     <Link
                                         href={route('services.edit', service.id)}
-                                        className="text-teal-600 hover:underline"
+                                        className="text-brown-600 hover:underline"
                                     >
                                         Edytuj
                                     </Link>
