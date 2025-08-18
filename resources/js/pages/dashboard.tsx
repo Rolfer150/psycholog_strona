@@ -73,7 +73,7 @@ export default function Dashboard() {
                             <XAxis dataKey="label" />
                             <YAxis allowDecimals={false} />
                             <Tooltip />
-                            <Line type="monotone" dataKey="count" stroke="#14b8a6" strokeWidth={3} />
+                            <Line type="monotone" dataKey="count" stroke="#a68b5d" strokeWidth={3} />
                         </LineChart>
                     </ResponsiveContainer>
                 </div>

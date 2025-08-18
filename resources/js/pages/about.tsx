@@ -52,7 +52,7 @@ export default function About() {
                         />
                     </aside>
 
-                    <article className="w-full text-2xl leading-relaxed text-zinc-800 md:w-2/3 space-y-6">
+                    <article className="w-full text-2xl leading-relaxed text-brown-700 md:w-2/3 space-y-6 text-center">
                         <p>
                             Jestem psychologiem w trakcie szkolenia w nurcie psychodynamicznym. Pracuję z osobami, które doświadczają trudności w relacjach, nadmiernego napięcia, niskiego poczucia własnej wartości czy trudności w rozumieniu własnych emocji.
                         </p>

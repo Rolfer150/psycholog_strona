@@ -67,7 +67,7 @@ export default function MessageIndex() {
                                 <td className="px-4 py-3">
                                     <Link
                                         href={route('messages.show', msg.id)}
-                                        className="text-brown-600 hover:underline"
+                                        className="text-teal-600 hover:underline"
                                     >
                                         Otwórz
                                     </Link>
