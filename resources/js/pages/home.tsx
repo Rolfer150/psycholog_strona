@@ -75,7 +75,7 @@ export default function Home() {
                         className="mx-auto max-w-4xl px-6 py-32 min-h-screen text-zinc-800"
                     >
                         <h2 className="text-5xl md:text-6xl font-bold text-center text-brown-500 mb-12">
-                            Dzień dobry,
+                            Dzień dobry
                         </h2>
 
                         <div className="space-y-6 text-lg leading-relaxed text-center">
