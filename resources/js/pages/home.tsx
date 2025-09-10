@@ -75,21 +75,24 @@ export default function Home() {
                         className="mx-auto max-w-4xl px-6 py-32 min-h-screen text-zinc-800"
                     >
                         <h2 className="text-5xl md:text-6xl font-bold text-center text-brown-500 mb-12">
-                            Witam
+                            Dzień dobry
                         </h2>
 
                         <div className="space-y-6 text-lg leading-relaxed text-center">
                             <p>
-                                Nazywam się <span className="font-semibold text-zinc-900">Jakub Chrobak</span>. Jestem psychologiem w trakcie całościowego szkolenia psychoterapeutycznego w nurcie psychodynamicznym.
+                                Jeśli zmagasz się z nadmiarem stresu, czujesz się przeciążony emocjonalnie albo Twoje relacje nie układają się tak, jak byś chciał — zapraszam do kontaktu.
                             </p>
+                            {/*<p>*/}
+                            {/*    Nazywam się <span className="font-semibold text-zinc-900">Jakub Chrobak</span>. Jestem psychologiem w trakcie całościowego szkolenia psychoterapeutycznego w nurcie psychodynamicznym.*/}
+                            {/*</p>*/}
 
-                            <p>
-                                Wspieram osoby zmagające się z trudnościami emocjonalnymi, problemami w relacjach czy stresem dnia codziennego. W pracy koncentruję się na głębszym zrozumieniu Twoich doświadczeń, emocji i potrzeb, aby wspólnie szukać trwałej zmiany i ulgi w cierpieniu.
-                            </p>
+                            {/*<p>*/}
+                            {/*    Wspieram osoby zmagające się z trudnościami emocjonalnymi, problemami w relacjach czy stresem dnia codziennego. W pracy koncentruję się na głębszym zrozumieniu Twoich doświadczeń, emocji i potrzeb, aby wspólnie szukać trwałej zmiany i ulgi w cierpieniu.*/}
+                            {/*</p>*/}
 
-                            <p className="text-zinc-700 italic border-l-4 border-brown-300 pl-4">
-                                Zapraszam do kontaktu – pierwsza rozmowa może być ważnym krokiem w stronę lepszego samopoczucia.
-                            </p>
+                            {/*<p className="text-zinc-700 italic border-l-4 border-brown-300 pl-4">*/}
+                            {/*    Zapraszam do kontaktu – pierwsza rozmowa może być ważnym krokiem w stronę lepszego samopoczucia.*/}
+                            {/*</p>*/}
                         </div>
                     </div>
 

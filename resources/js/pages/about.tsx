@@ -54,7 +54,10 @@ export default function About() {
 
                     <article className="w-full text-2xl leading-relaxed text-brown-700 md:w-2/3 space-y-6 text-center">
                         <p>
-                            Jestem psychologiem w trakcie szkolenia w nurcie psychodynamicznym. Pracuję z osobami, które doświadczają trudności w relacjach, nadmiernego napięcia, niskiego poczucia własnej wartości czy trudności w rozumieniu własnych emocji.
+                            Jestem psychologiem. Rozwijam się realizując szkolenie psychoterapeutyczne w Klinice Psychiatrii Dorosłych Szpitala Uniwersyteckiego w Krakowie, szkolenie w nurcie psychodynamicznym.
+                        </p>
+                        <p>
+                            Pracuję z osobami, które doświadczają trudności w relacjach, nadmiernego napięcia, niskiego poczucia własnej wartości czy trudności w rozumieniu własnych emocji.
                         </p>
                         <p>
                             W pracy psychoterapeutycznej przyglądam się nie tylko aktualnym objawom, ale też głębszym mechanizmom i wzorcom, które mogą wynikać z wcześniejszych doświadczeń.
@@ -75,7 +78,7 @@ export default function About() {
                             </ul>
                         </div>
                         <p>
-                            Rozwijam się realizując szkolenie psychoterapeutyczne w Klinice Psychiatrii Dorosłych Szpitala Uniwersyteckiego w Krakowie. Doświadczenie zdobywałem w Poradni Zdrowia Psychicznego, szkole podstawowej oraz średniej jako psycholog szkolny, a także w Podhalańskim Szpitalu Specjalistycznym im. Jana Pawła II.
+                            Doświadczenie zdobywałem w Poradni Zdrowia Psychicznego, szkole podstawowej oraz średniej jako psycholog szkolny, Podhalańskim Szpitalu Specjalistycznym im. Jana Pawła II, obecnie pracuję w prywatnym Centrum Zdrowia Psychicznego w Katowicach ,,Morze Zmian''
                         </p>
                     </article>
 

@@ -10,7 +10,7 @@ export default function Services() {
                 id: number;
                 name: string;
                 short_short_description?: string;
-                price: string;
+                price_formatted: string;
             }[];
         };
     };
@@ -59,7 +59,7 @@ export default function Services() {
                                 dangerouslySetInnerHTML={{ __html: service.short_description ?? '' }}
                             ></div>
                             <h3 className="text-2xl text-brown-400 font-bold">Cena</h3>
-                            <p className="text-xl text-brown-400 font-bold mb-6">{service.price}</p>
+                            <p className="text-xl text-brown-400 font-bold mb-6">{service.price_formatted}</p>
 
                             <Link
                                 href={route('services.show', service.id)}
