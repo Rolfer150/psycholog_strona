@@ -17,7 +17,7 @@ Route::get('/uslugi-i-ceny', [ServiceController::class, 'public'])->name('servic
 Route::get('/uslugi-i-ceny/{service}', [ServiceController::class, 'show'])->name('services.show');
 
 Route::get('/kontakt', [MessageController::class, 'create'])->name('messages.create');
-Route::post('/kontakt/store', [MessageController::class, 'store'])->name('messages.store');
+//Route::post('/kontakt/store', [MessageController::class, 'store'])->name('messages.store');
 
 
 Route::middleware(['auth', 'verified'])->group(function () {
@@ -31,10 +31,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::put('/{service}', [ServiceController::class, 'update'])->name('update');
         Route::delete('/{service}', [ServiceController::class, 'destroy'])->name('destroy');
     });
-    Route::prefix('dashboard/messages')->name('messages.')->group(function () {
-        Route::get('/', [MessageController::class, 'index'])->name('index');
-        Route::get('/show/{message}', [MessageController::class, 'show'])->name('show');
-    });
+//    Route::prefix('dashboard/messages')->name('messages.')->group(function () {
+//        Route::get('/', [MessageController::class, 'index'])->name('index');
+//        Route::get('/show/{message}', [MessageController::class, 'show'])->name('show');
+//    });
 });
 
 require __DIR__ . '/settings.php';

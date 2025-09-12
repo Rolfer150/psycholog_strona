@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Head, useForm, usePage } from '@inertiajs/react';
+import { Head, usePage } from '@inertiajs/react';
 import WebLayout from '@/layouts/web-layout';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -10,7 +10,6 @@ export default function Create() {
 
     // --- Referencje do animacji ---
     const contactRef = useRef<HTMLDivElement>(null);
-    const formRef = useRef<HTMLFormElement>(null);
     const mapRef = useRef<HTMLDivElement>(null);
 
     // --- Widget ze ZnanyLekarz.pl ---
@@ -18,37 +17,32 @@ export default function Create() {
 
     useEffect(() => {
         if (!mapRef.current) return;
-        const location = [49.4960291, 20.0063216];
+        const location = [50.2584994, 19.0241646];
         const map = L.map(mapRef.current).setView(location, 15);
+        const orangeIcon = new L.Icon({
+            iconUrl: 'img/marker-icon-2x-orange.png',
+            shadowUrl: 'img/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
 
-        const marker = L.marker(location).addTo(map)
-            .bindPopup("mgr Jakub Chrobak - Psycholog");
+        const marker = L.marker(location, {icon: orangeIcon})
+            .addTo(map)
+            .bindPopup('Morze Zmian\n' + 'Centrum Zdrowia\n' + 'Psychicznego');
 
         marker.on('mouseover', () => marker.openPopup());
         marker.on('mouseout', () => marker.closePopup());
         marker.on('click', () => {
-            window.location.href = "https://www.google.com/maps/place/Krakowska+66,+Nowy+Targ";
+            window.location.href = "https://www.google.com/maps/place/Staromiejska+12%2F2,+40-013+Katowice/@50.2583376,19.0229802,17.88z/data=!4m5!3m4!1s0x4716ce362c36ea85:0xfaf9e54b8d7a98b6!8m2!3d50.2584142!4d19.0241739?entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D";
         });
     }, []);
-
-    // --- Formularz (Inertia) ---
-    const { data, setData, post, processing, errors, reset } = useForm({
-        name: '',
-        email: '',
-        text: '',
-    });
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        post(route('messages.store'), {
-            onSuccess: () => reset(),
-        });
-    };
 
     // --- Animacja kontaktu ---
     useEffect(() => {
@@ -64,27 +58,7 @@ export default function Create() {
                     observer.unobserve(el);
                 }
             },
-            { threshold: 0.2 }
-        );
-        observer.observe(el);
-        return () => observer.disconnect();
-    }, []);
-
-    // --- Animacja formularza ---
-    useEffect(() => {
-        if (!formRef.current) return;
-        const el = formRef.current;
-        el.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700', 'ease-out');
-
-        const observer = new window.IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    el.classList.add('opacity-100', 'translate-y-0');
-                    el.classList.remove('opacity-0', 'translate-y-8');
-                    observer.unobserve(el);
-                }
-            },
-            { threshold: 0.2 }
+            { threshold: 0.15 }
         );
         observer.observe(el);
         return () => observer.disconnect();
@@ -162,70 +136,74 @@ export default function Create() {
             <Header>Kontakt</Header>
             <div key={url} className="mx-auto max-w-6xl py-32">
                 <section className="flex flex-col justify-center items-center gap-8 space-y-32 w-full">
-                    {/* Dane kontaktowe z animacją */}
-                    <div
-                        ref={contactRef}
-                        className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full text-white min-h-[50vh]"
-                    >
-                        {/* Adres */}
-                        <div className="p-6 rounded-xl shadow-lg bg-brown-400">
-                            <h2 className="text-6xl font-semibold my-12 text-center">Adres</h2>
-                            <a
-                                href="https://www.google.com/maps/place/Krakowska+66,+34-400+Nowy+Targ"
-                                className="group block"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <div className="grid place-items-center">
-                                    <div>
-                                        <svg className="size-12 w-full mb-4" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                                        </svg>
-                                        <p className="text-2xl">ul. Krakowska 66, Nowy Targ</p>
-                                    </div>
-                                    <span className="block w-0 group-hover:w-full bg-white transition-all duration-500 h-0.5"></span>
-                                </div>
-                            </a>
-                        </div>
+                    <div ref={contactRef}>
+                        <h2 className="text-5xl font-semibold text-center text-brown-400">Skontaktuj się ze mną poprzez:</h2>
 
-                        {/* E-mail */}
-                        <div className="p-6 rounded-xl shadow-lg bg-brown-400">
-                            <h2 className="text-6xl font-semibold my-12 text-center">E-mail</h2>
-                            <a href="mailto:adres@email.pl" className="group block" rel="noopener noreferrer">
-                                <div className="grid place-items-center">
-                                    <div>
-                                        <svg className="size-12 w-full mb-4" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25" />
-                                        </svg>
-                                        <p className="text-2xl">adres@email.pl</p>
-                                    </div>
-                                    <span className="block w-0 group-hover:w-full bg-white transition-all duration-500 h-0.5"></span>
-                                </div>
-                            </a>
-                        </div>
+                        {/* Dane kontaktowe z animacją */}
+                        <div
 
-                        {/* Telefon */}
-                        <div className="p-6 rounded-xl shadow-lg bg-brown-400">
-                            <h2 className="text-6xl font-semibold my-12 text-center">Telefon</h2>
-                            <a href="tel:123456789" className="group block" rel="noopener noreferrer">
-                                <div className="grid place-items-center">
-                                    <div>
-                                        <svg className="size-12 w-full mb-4" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
-                                        </svg>
-                                        <p className="text-2xl">123 456 789</p>
+                            className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full mt-24 text-white min-h-[50vh]"
+                        >
+                            {/* Adres */}
+                            <div className="p-6 rounded-xl shadow-lg bg-brown-400">
+                                <h2 className="text-6xl font-semibold my-12 text-center">Adres</h2>
+                                <a
+                                    href="https://www.google.com/maps/place/Staromiejska+12%2F2,+40-013+Katowice/@50.2583376,19.0229802,17.88z/data=!4m5!3m4!1s0x4716ce362c36ea85:0xfaf9e54b8d7a98b6!8m2!3d50.2584142!4d19.0241739?entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D"
+                                    className="group block"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <div className="grid place-items-center">
+                                        <div>
+                                            <svg className="size-12 w-full mb-4" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                                            </svg>
+                                            <p className="text-2xl text-center">ul. Staromiejska 12/2, Katowice</p>
+                                        </div>
+                                        <span className="block w-0 group-hover:w-full bg-white transition-all duration-500 h-0.5"></span>
                                     </div>
-                                    <span className="block w-0 group-hover:w-full bg-white transition-all duration-500 h-0.5"></span>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
+
+                            {/* E-mail */}
+                            <div className="p-6 rounded-xl shadow-lg bg-brown-400">
+                                <h2 className="text-6xl font-semibold my-12 text-center">E-mail</h2>
+                                <a href="mailto:adres@email.pl" className="group block" rel="noopener noreferrer">
+                                    <div className="grid place-items-center">
+                                        <div>
+                                            <svg className="size-12 w-full mb-4" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25" />
+                                            </svg>
+                                            <p className="text-2xl">adres@email.pl</p>
+                                        </div>
+                                        <span className="block w-0 group-hover:w-full bg-white transition-all duration-500 h-0.5"></span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            {/* Telefon */}
+                            <div className="p-6 rounded-xl shadow-lg bg-brown-400">
+                                <h2 className="text-6xl font-semibold my-12 text-center">Telefon</h2>
+                                <a href="tel:123456789" className="group block" rel="noopener noreferrer">
+                                    <div className="grid place-items-center">
+                                        <div>
+                                            <svg className="size-12 w-full mb-4" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                                            </svg>
+                                            <p className="text-2xl">123 456 789</p>
+                                        </div>
+                                        <span className="block w-0 group-hover:w-full bg-white transition-all duration-500 h-0.5"></span>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
                     {/* Widget ze ZnanyLekarz.pl z animacją fade-in */}
                     <div ref={znanylekarzRef} className="w-full md:w-2/3">
-                        <h2 className="text-5xl font-semibold text-center text-brown-400">Złóż wizytę przez platformę ZnanyLekarz.pl</h2>
-                        <div className="bg-white rounded-xl shadow-lg p-6 mt-12 flex justify-center items-center">
+                        <h2 className="text-5xl font-semibold text-center text-brown-400">lub złóż wizytę przy pomocy platformy ZnanyLekarz.pl</h2>
+                        <div className="bg-white rounded-xl shadow-lg p-6 mt-24 flex justify-center items-center">
                             <a
                                 id="zl-url"
                                 className="zl-url"
@@ -241,69 +219,6 @@ export default function Create() {
                                 Jakub Chrobak - ZnanyLekarz.pl
                             </a>
                         </div>
-                    </div>
-
-                    {/* Formularz z animacją fade-in */}
-                    <div ref={formRef} className="w-full md:w-2/3">
-                        <h2 className="text-5xl font-semibold text-center text-brown-400">lub</h2>
-                        <h2 className="text-5xl font-semibold text-center text-brown-400">napisz wiadomość</h2>
-                        <form
-                            onSubmit={handleSubmit}
-                            className="bg-white rounded-xl shadow-lg p-6 mt-12 space-y-6"
-                        >
-                            <div>
-                                <label htmlFor="name" className="block mb-1 text-zinc-700 font-medium">
-                                    Imię i nazwisko
-                                </label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    value={data.name}
-                                    onChange={e => setData('name', e.target.value)}
-                                    className="w-full border border-zinc-300 shadow-sm focus:border-brown-500 focus:ring-brown-500 focus:outline-none p-2 rounded-md"
-                                    required
-                                />
-                                {errors.name && <div className="text-red-600 text-sm">{errors.name}</div>}
-                            </div>
-                            <div>
-                                <label htmlFor="email" className="block mb-1 text-zinc-700 font-medium">
-                                    Adres e-mail
-                                </label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    value={data.email}
-                                    onChange={e => setData('email', e.target.value)}
-                                    className="w-full border border-zinc-300 shadow-sm focus:border-brown-500 focus:ring-brown-500 focus:outline-none p-2 rounded-md"
-                                    required
-                                />
-                                {errors.email && <div className="text-red-600 text-sm">{errors.email}</div>}
-                            </div>
-                            <div>
-                                <label htmlFor="text" className="block mb-1 text-zinc-700 font-medium">
-                                    Wiadomość
-                                </label>
-                                <textarea
-                                    id="text"
-                                    name="text"
-                                    rows={5}
-                                    value={data.text}
-                                    onChange={e => setData('text', e.target.value)}
-                                    className="w-full border border-zinc-300 shadow-sm focus:border-brown-500 focus:ring-brown-500 focus:outline-none p-2 rounded-md"
-                                    required
-                                />
-                                {errors.text && <div className="text-red-600 text-sm">{errors.text}</div>}
-                            </div>
-                            <button
-                                type="submit"
-                                disabled={processing}
-                                className="w-full py-3 border-brown-400 border bg-brown-400 text-white text-lg font-semibold rounded-md cursor-pointer transition-all duration-300 ease-in-out hover:bg-transparent hover:text-brown-400 hover:shadow-sm"
-                            >
-                                {processing ? 'Wysyłanie...' : 'Wyślij wiadomość'}
-                            </button>
-                        </form>
                     </div>
 
                     {/* Mapa z animacją */}

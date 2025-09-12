@@ -14,11 +14,6 @@ const mainNavItems: NavItem[] = [
         icon: LayoutGrid,
     },
     {
-        title: 'Wiadomości',
-        href: '/dashboard/messages',
-        icon: Mail,
-    },
-    {
         title: 'Usługi',
         href: '/dashboard/services',
         icon: Handshake,

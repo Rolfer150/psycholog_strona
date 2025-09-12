@@ -35,18 +35,16 @@ function AnimateOnScroll({ children }: { children: React.ReactNode }) {
 }
 
 export default function Header({ title, description }: { title: string; description?: string }) {
-    const [line1, line2] = title.split(',');
 
     return (
         <AnimateOnScroll>
             <header className="relative flex flex-col-reverse items-center justify-center gap-12 px-6 py-12 text-brown-400 md:flex-row md:gap-20 bg-[#FDFAF5] overflow-hidden min-h-screen mx-auto">
                 <div className="w-full md:w-2/3 flex flex-col p-4">
-                    <h1 className="mb-6 text-5xl font-extrabold leading-tight lg:text-7xl md:leading-tight text-center md:text-left">
-                        {line1.trim()},{<br />}
-                        {line2.trim()}
+                    <h1 className="mb-6 text-6xl font-extrabold leading-tight lg:text-8xl md:leading-tight text-center md:text-left">
+                        {title}
                     </h1>
                     {description && (
-                        <p className="max-w-2xl text-2xl lg:text-3xl font-light leading-snug opacity-90 drop-shadow-sm text-center md:text-left">
+                        <p className="max-w-3xl text-2xl lg:text-4xl font-light leading-snug opacity-90 drop-shadow-sm text-center md:text-left">
                             {description}
                         </p>
                     )}

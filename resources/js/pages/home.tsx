@@ -64,58 +64,17 @@ export default function Home() {
             <Head title="Strona główna" />
 
             <Header
-                title="Regularne spotkania, realna zmiana"
-                description="Bezpieczna przestrzeń, w której możesz porozmawiać, lepiej zrozumieć siebie i zacząć wprowadzać zmiany."
+                title="Dzień dobry,"
+                description="Zapraszam na konsultacje psychologiczne, pomoc psychologiczną, psychoterapię."
             />
 
             <div className="mx-auto">
-                <section className="text-xl text-zinc-800 min-h-screen">
-                    <div
-                        ref={aboutRef}
-                        className="mx-auto max-w-4xl px-6 py-32 min-h-screen text-zinc-800"
-                    >
-                        <h2 className="text-5xl md:text-6xl font-bold text-center text-brown-500 mb-12">
-                            Dzień dobry
-                        </h2>
-
-                        <div className="space-y-6 text-lg leading-relaxed text-center">
-                            <p>
-                                Jeśli zmagasz się z nadmiarem stresu, czujesz się przeciążony emocjonalnie albo Twoje relacje nie układają się tak, jak byś chciał — zapraszam do kontaktu.
-                            </p>
-                            {/*<p>*/}
-                            {/*    Nazywam się <span className="font-semibold text-zinc-900">Jakub Chrobak</span>. Jestem psychologiem w trakcie całościowego szkolenia psychoterapeutycznego w nurcie psychodynamicznym.*/}
-                            {/*</p>*/}
-
-                            {/*<p>*/}
-                            {/*    Wspieram osoby zmagające się z trudnościami emocjonalnymi, problemami w relacjach czy stresem dnia codziennego. W pracy koncentruję się na głębszym zrozumieniu Twoich doświadczeń, emocji i potrzeb, aby wspólnie szukać trwałej zmiany i ulgi w cierpieniu.*/}
-                            {/*</p>*/}
-
-                            {/*<p className="text-zinc-700 italic border-l-4 border-brown-300 pl-4">*/}
-                            {/*    Zapraszam do kontaktu – pierwsza rozmowa może być ważnym krokiem w stronę lepszego samopoczucia.*/}
-                            {/*</p>*/}
-                        </div>
-                    </div>
-
-
-                    <div
-                        ref={homeServicesRef}
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 min-h-screen mx-auto bg-white gap-x-6 gap-y-18 py-32"
-                    >
-                        {services.map(service => (
-                            <div
-                                key={service.id}
-                                 className="fade-in-section opacity-0 translate-y-8 transition-all duration-700 ease-out p-8 text-center text-black"
-                            >
-                                <h3 className="text-2xl font-semibold text-brown-600 text-center p-4 mt-4 h-26">{service.name}</h3>
-                                <Link
-                                    href={route('services.show', service.id)}
-                                    className="border-brown-400 border bg-brown-400 text-white px-6 py-4 text-xl rounded-md transition-all duration-300 ease-in-out hover:bg-transparent hover:text-brown-400 hover:shadow-sm"
-                                >
-                                    Zobacz więcej
-                                </Link>
-                            </div>
-                        ))}
-                    </div>
+                <section
+                    ref={aboutRef}
+                    className="mx-auto max-w-4xl px-6 py-32 min-h-screen text-2xl lg:text-4xl leading-relaxed text-center text-brown-600 min-h-screen">
+                    <p>
+                        Jeśli zmagasz się z nadmiarem stresu, czujesz się przeciążony emocjonalnie albo Twoje relacje nie układają się tak, jak byś chciał — zapraszam do kontaktu.
+                    </p>
                 </section>
             </div>
         </>

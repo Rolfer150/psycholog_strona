@@ -37,7 +37,7 @@ export default function Heading() {
     };
 
     return (
-        <nav className="sticky top-0 z-50 bg-[#FDFAF5] shadow-sm w-full">
+        <nav className="sticky top-0 z-50 bg-neutral-500 shadow-sm w-full">
             {/* Header z nazwą i hamburgerem */}
             <div className="flex items-center justify-between md:hidden px-8 py-4 h-20">
                 <button
@@ -45,9 +45,9 @@ export default function Heading() {
                     onClick={() => setOpen(!open)}
                     aria-label="Otwórz menu"
                 >
-                    {open ? <X size={32} className="text-brown-700" /> : <Menu size={32} className="text-brown-700" />}
+                    {open ? <X size={32} className="text-neutral-100" /> : <Menu size={32} className="text-neutral-100" />}
                 </button>
-                <span className="text-2xl font-bold text-brown-700">Jakub Chrobak Psycholog</span>
+                <span className="text-2xl font-bold text-neutral-100">Jakub Chrobak Psycholog</span>
             </div>
 
             {/* Mobile Drawer + przezroczyste tło na klik */}
@@ -91,11 +91,11 @@ export default function Heading() {
                     <Link
                         key={path}
                         href={href}
-                        className="group transition duration-300 text-brown-700"
+                        className="group transition duration-300 text-neutral-100"
                     >
                         {label}
                         <span
-                            className={`block group-hover:max-w-full h-0.5 bg-brown-600 ${
+                            className={`block group-hover:max-w-full h-0.5 bg-neutral-100 ${
                                 !isActive(path) && 'max-w-0 transition-all duration-500'
                             }`}
                         ></span>

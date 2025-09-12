@@ -52,7 +52,7 @@ export default function About() {
                         />
                     </aside>
 
-                    <article className="w-full text-2xl leading-relaxed text-brown-700 md:w-2/3 space-y-6 text-center">
+                    <article className="w-full text-2xl leading-relaxed text-brown-600 md:w-2/3 space-y-6 text-center">
                         <p>
                             Jestem psychologiem. Rozwijam się realizując szkolenie psychoterapeutyczne w Klinice Psychiatrii Dorosłych Szpitala Uniwersyteckiego w Krakowie, szkolenie w nurcie psychodynamicznym.
                         </p>
@@ -66,8 +66,8 @@ export default function About() {
                 </section>
 
                 {/* Sekcja 2 */}
-                <section ref={section2Ref} className="flex flex-col gap-12 md:flex-row md:items-start text-zinc-800">
-                    <article className="w-full md:w-2/3 space-y-6 text-lg leading-relaxed">
+                <section ref={section2Ref} className=" text-zinc-800">
+                    <article className="w-full space-y-6 text-lg leading-relaxed">
                         <div>
                             <h2 className="mb-2 text-xl font-semibold text-brown-600">Pomagam osobom, które:</h2>
                             <ul className="list-disc list-inside space-y-1 marker:text-brown-400">
@@ -81,31 +81,6 @@ export default function About() {
                             Doświadczenie zdobywałem w Poradni Zdrowia Psychicznego, szkole podstawowej oraz średniej jako psycholog szkolny, Podhalańskim Szpitalu Specjalistycznym im. Jana Pawła II, obecnie pracuję w prywatnym Centrum Zdrowia Psychicznego w Katowicach ,,Morze Zmian''
                         </p>
                     </article>
-
-                    <aside className="w-full md:w-1/3 space-y-6">
-                        <div>
-                            <h2 className="mb-2 text-xl font-semibold text-brown-600">Znajomość języków:</h2>
-                            <ul className="list-disc list-inside space-y-1 marker:text-brown-400">
-                                <li>polski</li>
-                                <li>angielski</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h2 className="mb-2 text-xl font-semibold text-brown-600">Doświadczenie:</h2>
-                            <ul className="list-disc list-inside space-y-1 marker:text-brown-400">
-                                <li>SP4 w Nowym Targu – od 02.09.2024 (obecnie)</li>
-                                <li>ZSE w Nowym Targu – od 01.02.2025 (obecnie)</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h2 className="mb-2 text-xl font-semibold text-brown-600">Edukacja:</h2>
-                            <ul className="list-disc list-inside space-y-1 marker:text-brown-400">
-                                <li>Magister psychologii – Uniwersytet Jagielloński</li>
-                            </ul>
-                        </div>
-                    </aside>
                 </section>
 
                 {/* Sekcja 3 */}
