@@ -78,7 +78,7 @@ export default function About() {
                             </ul>
                         </div>
                         <p>
-                            Doświadczenie zdobywałem w Poradni Zdrowia Psychicznego, szkole podstawowej oraz średniej jako psycholog szkolny, Podhalańskim Szpitalu Specjalistycznym im. Jana Pawła II, obecnie pracuję w prywatnym Centrum Zdrowia Psychicznego w Katowicach ,,Morze Zmian''
+                            Doświadczenie zdobywałem w Poradni Zdrowia Psychicznego, szkole podstawowej oraz średniej jako psycholog szkolny, Podhalańskim Szpitalu Specjalistycznym im. Jana Pawła II, obecnie pracuję w prywatnym Centrum Zdrowia Psychicznego w Katowicach "Morze Zmian" oraz w Ośrodku Psychoterapii "Centrum Myśli" w Myślenicach.
                         </p>
                     </article>
                 </section>
@@ -86,11 +86,10 @@ export default function About() {
                 {/* Sekcja 3 */}
                 <section ref={section3Ref} className="rounded-lg border border-zinc-200 bg-zinc-50 p-8 shadow-md md:p-10">
                     <h2 className="mb-6 text-2xl font-semibold text-brown-600">Moja ścieżka zawodowa i zasady pracy</h2>
-                    <ul className="list-disc list-inside space-y-3 text-lg leading-relaxed text-zinc-700 marker:text-brown-400">
+                    <ul className="list-disc list-outside space-y-3 text-lg leading-relaxed text-zinc-700 marker:text-brown-400">
+                        <li>Realizuje 4 letnie szkolenie psychoterapeutyczne w nurcie psychodynamicznym, szkolenie akredytowane przez sekcję naukową psychoterapii polskiego towarzystwa psychiatrycznego jako kurs prowadzący do uzyskania certyfikatu psychoterapeuty polskiego towarzystwa psychiatrycznego</li>
                         <li>Pracuję pod stałą superwizją.</li>
-                        <li>Ukończyłem studia psychologiczne na Uniwersytecie Jagiellońskim.</li>
-                        <li>W pracy kieruję się zasadami etyki zawodu psychologa.</li>
-                        <li>Regularnie uczestniczę w szkoleniach i konferencjach z zakresu psychoterapii.</li>
+                        <li>Regularnie uczestniczę w szkoleniach z zakresu psychoterapii.</li>
                     </ul>
                 </section>
             </div>
