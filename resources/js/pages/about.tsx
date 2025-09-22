@@ -52,7 +52,7 @@ export default function About() {
                         />
                     </aside>
 
-                    <article className="w-full text-2xl leading-relaxed text-brown-600 md:w-2/3 space-y-6 text-center">
+                    <article className="w-full text-2xl leading-relaxed text-brown-600 md:w-2/3 space-y-12 text-center">
                         <p>
                             Jestem psychologiem. Rozwijam się realizując szkolenie psychoterapeutyczne w Klinice Psychiatrii Dorosłych Szpitala Uniwersyteckiego w Krakowie, szkolenie w nurcie psychodynamicznym.
                         </p>
@@ -67,26 +67,31 @@ export default function About() {
 
                 {/* Sekcja 2 */}
                 <section ref={section2Ref} className=" text-zinc-800">
-                    <article className="w-full space-y-6 text-lg leading-relaxed">
+                    <article className="w-full space-y-12 text-lg leading-relaxed">
                         <div>
                             <h2 className="mb-2 text-xl font-semibold text-brown-600">Pomagam osobom, które:</h2>
-                            <ul className="list-disc list-inside space-y-1 marker:text-brown-400">
+                            <ul className="list-disc list-inside space-y-2 marker:text-brown-400">
                                 <li>czują się zablokowane emocjonalnie,</li>
                                 <li>zmagają się z lękiem, poczuciem winy lub pustki,</li>
                                 <li>trudno im być w kontakcie ze sobą lub innymi,</li>
                                 <li>mają trudność z podejmowaniem decyzji lub nadmiernie siebie kontrolują.</li>
                             </ul>
                         </div>
-                        <p>
-                            Doświadczenie zdobywałem w Poradni Zdrowia Psychicznego, szkole podstawowej oraz średniej jako psycholog szkolny, Podhalańskim Szpitalu Specjalistycznym im. Jana Pawła II, obecnie pracuję w prywatnym Centrum Zdrowia Psychicznego w Katowicach "Morze Zmian" oraz w Ośrodku Psychoterapii "Centrum Myśli" w Myślenicach.
-                        </p>
+                        <div>
+                            <h2 className="mb-2 text-xl font-semibold text-brown-600">Przyjmuję w Nowym Targu oraz online. Również współpracuję z:</h2>
+
+                            <ul className="list-disc list-inside space-y-2 marker:text-brown-400">
+                                <li><i>Centrum Myśli</i> w Myślenicach - oferując (tylko dorośli) konsultacje psychologiczne, psychoterapię indywidualną a takżę psychoterapię par/rodzin - prowadzoną z drugim terapeutą (tzw. koterapia). </li>
+                                <li><i>Morzem Zmian</i> w Katowicach, oferując (tylko dorośli) konsultacje psychologiczne, diagnozę osobowości, ADHD, psychoterapię indywidualną.</li>
+                            </ul>
+                        </div>
                     </article>
                 </section>
 
                 {/* Sekcja 3 */}
                 <section ref={section3Ref} className="rounded-lg border border-zinc-200 bg-zinc-50 p-8 shadow-md md:p-10">
                     <h2 className="mb-6 text-2xl font-semibold text-brown-600">Moja ścieżka zawodowa i zasady pracy</h2>
-                    <ul className="list-disc list-outside space-y-3 text-lg leading-relaxed text-zinc-700 marker:text-brown-400">
+                    <ul className="list-disc list-outside space-y-2 text-lg leading-relaxed text-zinc-700 marker:text-brown-400">
                         <li>Realizuje 4 letnie szkolenie psychoterapeutyczne w nurcie psychodynamicznym, szkolenie akredytowane przez sekcję naukową psychoterapii polskiego towarzystwa psychiatrycznego jako kurs prowadzący do uzyskania certyfikatu psychoterapeuty polskiego towarzystwa psychiatrycznego</li>
                         <li>Pracuję pod stałą superwizją.</li>
                         <li>Regularnie uczestniczę w szkoleniach z zakresu psychoterapii.</li>
