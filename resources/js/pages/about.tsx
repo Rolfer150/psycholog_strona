@@ -81,8 +81,8 @@ export default function About() {
                             <h2 className="mb-2 text-xl font-semibold text-brown-600">Przyjmuję w Nowym Targu oraz online. Również współpracuję z:</h2>
 
                             <ul className="list-disc list-inside space-y-2 marker:text-brown-400">
-                                <li><i>Centrum Myśli</i> w Myślenicach - oferując (tylko dorośli) konsultacje psychologiczne, psychoterapię indywidualną a takżę psychoterapię par/rodzin - prowadzoną z drugim terapeutą (tzw. koterapia). </li>
-                                <li><i>Morzem Zmian</i> w Katowicach, oferując (tylko dorośli) konsultacje psychologiczne, diagnozę osobowości, ADHD, psychoterapię indywidualną.</li>
+                                <li><i>Centrum Myśli</i> w Myślenicach, oferując (tylko dorośli) konsultacje psychologiczne, psychoterapię indywidualną a takżę psychoterapię par/rodzin - prowadzoną z drugim terapeutą (tzw. koterapia). </li>
+                                <li><i>Morzem Zmian</i> w Katowicach, proponując (tylko dorośli) konsultacje psychologiczne, diagnozę osobowości, ADHD, psychoterapię indywidualną.</li>
                             </ul>
                         </div>
                     </article>
