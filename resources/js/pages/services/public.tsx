@@ -46,20 +46,20 @@ export default function Services() {
             <div className="mx-auto max-w-6xl py-32">
                 <section
                     ref={sectionRef}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-18"
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-18 p-4"
                 >
                     {services.map(service => (
                         <div
                             key={service.id}
                             className="fade-in-section opacity-0 translate-y-8 transition-all duration-700 ease-out bg-white p-8 text-center text-black rounded-xl shadow-lg"
                         >
-                            <h2 className="text-2xl font-semibold h-16">{service.name}</h2>
+                            <h2 className="text-2xl text-brown-400 font-semibold h-16">{service.name}</h2>
                             <div
-                                className="text-zinc-600 my-2 md:h-36"
+                                className="text-zinc-600 my-4 lg:h-24"
                                 dangerouslySetInnerHTML={{ __html: service.short_description ?? '' }}
                             ></div>
                             <h3 className="text-2xl text-brown-400 font-bold">Cena</h3>
-                            <p className="text-xl text-brown-400 font-bold mb-6">{service.price_formatted}</p>
+                            <p className="text-xl text-brown-400 font-bold mb-6">{service.price_formatted} / 50 min</p>
 
                             <Link
                                 href={route('services.show', service.id)}

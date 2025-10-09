@@ -134,7 +134,7 @@ export default function Create() {
         <>
             <Head title="Kontakt" />
             <Header>Kontakt</Header>
-            <div key={url} className="mx-auto max-w-6xl py-32">
+            <div key={url} className="mx-auto max-w-7xl py-32">
                 <section className="flex flex-col justify-center items-center gap-8 space-y-32 w-full">
                     <div ref={contactRef}>
                         <h2 className="text-5xl font-semibold text-center text-brown-400">Skontaktuj się ze mną poprzez:</h2>
@@ -169,13 +169,13 @@ export default function Create() {
                             {/* E-mail */}
                             <div className="p-6 rounded-xl shadow-lg bg-brown-400">
                                 <h2 className="text-6xl font-semibold my-12 text-center">E-mail</h2>
-                                <a href="mailto:adres@email.pl" className="group block" rel="noopener noreferrer">
+                                <a href="mailto:kubachrobakemail@gmail.com" className="group block" rel="noopener noreferrer">
                                     <div className="grid place-items-center">
                                         <div>
                                             <svg className="size-12 w-full mb-4" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25" />
                                             </svg>
-                                            <p className="text-2xl">adres@email.pl</p>
+                                            <p className="text-2xl">kubachrobakemail@gmail.com</p>
                                         </div>
                                         <span className="block w-0 group-hover:w-full bg-white transition-all duration-500 h-0.5"></span>
                                     </div>
@@ -185,13 +185,13 @@ export default function Create() {
                             {/* Telefon */}
                             <div className="p-6 rounded-xl shadow-lg bg-brown-400">
                                 <h2 className="text-6xl font-semibold my-12 text-center">Telefon</h2>
-                                <a href="tel:123456789" className="group block" rel="noopener noreferrer">
+                                <a href="tel:501 458 987" className="group block" rel="noopener noreferrer">
                                     <div className="grid place-items-center">
                                         <div>
                                             <svg className="size-12 w-full mb-4" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
                                             </svg>
-                                            <p className="text-2xl">123 456 789</p>
+                                            <p className="text-2xl">501 458 987</p>
                                         </div>
                                         <span className="block w-0 group-hover:w-full bg-white transition-all duration-500 h-0.5"></span>
                                     </div>
@@ -225,7 +225,7 @@ export default function Create() {
                     <div
                         ref={mapRef}
                         id="map"
-                        className="w-full h-96 rounded-lg shadow-md mb-32"
+                        className="w-full h-128 rounded-lg shadow-md mb-32"
                     ></div>
                 </section>
             </div>
