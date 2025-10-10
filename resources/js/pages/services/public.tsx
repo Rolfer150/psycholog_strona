@@ -42,7 +42,7 @@ export default function Services() {
     return (
         <>
             <Head title="Usługi i ceny" />
-            <Header>Usługi i ceny</Header>
+            <Header>Usługi</Header>
             <div className="mx-auto max-w-6xl py-32">
                 <section
                     ref={sectionRef}
@@ -53,9 +53,9 @@ export default function Services() {
                             key={service.id}
                             className="fade-in-section opacity-0 translate-y-8 transition-all duration-700 ease-out bg-white p-8 text-center text-black rounded-xl shadow-lg"
                         >
-                            <h2 className="text-2xl text-brown-400 font-semibold h-16">{service.name}</h2>
+                            <h2 className="text-2xl text-brown-400 font-semibold">{service.name}</h2>
                             <div
-                                className="text-zinc-600 my-4 lg:h-24"
+                                className="text-zinc-600 my-4"
                                 dangerouslySetInnerHTML={{ __html: service.short_description ?? '' }}
                             ></div>
                             <h3 className="text-2xl text-brown-400 font-bold">Cena</h3>
