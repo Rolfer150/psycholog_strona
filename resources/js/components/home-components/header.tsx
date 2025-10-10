@@ -51,7 +51,7 @@ export default function Header({ title, description }: { title: string; descript
                 </div>
 
                 {/* Dekoracyjne zdjęcie */}
-                <div className="w-full md:w-1/3 flex justify-center items-center">
+                <div className="w-full min-h-screen md:w-1/3 flex justify-center items-center">
                     <div className="aspect-[4/5] w-full max-w-md">
                         <img
                             src="/img/logo.png"
