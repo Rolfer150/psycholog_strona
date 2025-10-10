@@ -39,7 +39,7 @@ export default function Heading() {
     return (
         <nav className="sticky top-0 z-50 bg-neutral-500 shadow-sm w-full">
             {/* Header z nazwą i hamburgerem */}
-            <div className="flex items-center justify-between md:hidden px-8 py-4 h-20">
+            <div className="flex items-center justify-between md:hidden px-4 py-4 h-20">
                 <button
                     className="flex flex-col justify-center items-center group"
                     onClick={() => setOpen(!open)}
