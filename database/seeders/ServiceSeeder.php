@@ -53,7 +53,6 @@ class ServiceSeeder extends Seeder
                         <ul class="list-disc marker:text-brown-400 ml-6 space-y-1">
                             <li>dla osób zmagających się z trudnościami emocjonalnymi lub niskim poczuciem własnej wartości,</li>
                             <li>dla tych, którzy doświadczają powtarzających się problemów w relacjach,</li>
-                            <li>dla osób przeżywających żałobę, kryzys lub traumę,</li>
                             <li>dla tych, którzy chcą lepiej rozumieć siebie i wprowadzać trwałe zmiany w życiu.</li>
                         </ul>
                         <p>Psychoterapia indywidualna to proces prowadzący do głębszego wglądu, większej równowagi emocjonalnej i poczucia wewnętrznej spójności.</p>
