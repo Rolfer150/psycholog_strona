@@ -142,10 +142,10 @@ export default function Create() {
                         {/* Dane kontaktowe z animacją */}
                         <div
 
-                            className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full mt-24 text-white min-h-[50vh]"
+                            className="grid grid-cols-1 lg:grid-cols-3 md:gap-6 w-full mt-24 text-white min-h-[50vh]"
                         >
                             {/* Adres */}
-                            <div className="p-6 rounded-xl shadow-lg bg-brown-400">
+                            <div className="p-6 rounded-t-xl md:rounded-xl shadow-lg bg-brown-400">
                                 <h2 className="text-6xl font-semibold my-12 text-center">Adres</h2>
                                 <a
                                     href="https://www.google.com/maps/place/Staromiejska+12%2F2,+40-013+Katowice/@50.2583376,19.0229802,17.88z/data=!4m5!3m4!1s0x4716ce362c36ea85:0xfaf9e54b8d7a98b6!8m2!3d50.2584142!4d19.0241739?entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D"
@@ -167,7 +167,7 @@ export default function Create() {
                             </div>
 
                             {/* E-mail */}
-                            <div className="p-6 rounded-xl shadow-lg bg-brown-400">
+                            <div className="p-6 md:rounded-xl shadow-lg bg-brown-400">
                                 <h2 className="text-6xl font-semibold my-12 text-center">E-mail</h2>
                                 <a href="mailto:kubachrobakemail@gmail.com" className="group block" rel="noopener noreferrer">
                                     <div className="grid place-items-center">
@@ -183,7 +183,7 @@ export default function Create() {
                             </div>
 
                             {/* Telefon */}
-                            <div className="p-6 rounded-xl shadow-lg bg-brown-400">
+                            <div className="p-6 rounded-b-xl md:rounded-xl shadow-lg bg-brown-400">
                                 <h2 className="text-6xl font-semibold my-12 text-center">Telefon</h2>
                                 <a href="tel:501 458 987" className="group block" rel="noopener noreferrer">
                                     <div className="grid place-items-center">
