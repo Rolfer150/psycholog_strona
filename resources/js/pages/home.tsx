@@ -64,7 +64,7 @@ export default function Home() {
             <Head title="Strona główna" />
 
             <Header
-                title="Dzień dobry,"
+                title="Dzień dobry"
                 description="Zapraszam na konsultacje psychologiczne, pomoc psychologiczną, psychoterapię."
             />
 

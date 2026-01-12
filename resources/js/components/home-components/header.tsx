@@ -38,7 +38,7 @@ export default function Header({ title, description }: { title: string; descript
 
     return (
         <AnimateOnScroll>
-            <header className="relative flex flex-col-reverse items-center justify-center gap-12 px-6 py-12 text-brown-400 md:flex-row md:gap-20 bg-[#FDFAF5] overflow-hidden min-h-screen mx-auto">
+            <header className="relative flex flex-col-reverse items-center justify-center gap-12 px-6 py-12 text-brown-400 md:flex-row md:gap-20 bg-[#faf6ef] overflow-hidden min-h-screen mx-auto">
                 <div className="w-full md:w-2/3 flex flex-col p-4">
                     <h1 className="mb-6 text-6xl font-extrabold leading-tight lg:text-8xl md:leading-tight text-center md:text-left">
                         {title}

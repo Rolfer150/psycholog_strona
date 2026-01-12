@@ -1,10 +1,13 @@
 import { Link, usePage } from '@inertiajs/react';
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import useDarkMode from '@/hooks/use-darkmode';
 
 export default function Heading() {
     const { url } = usePage();
     const [open, setOpen] = useState(false);
+
+    // const { toggleDarkMode, isDarkMode } = useDarkMode();
 
     useEffect(() => {
         if (open) {
@@ -101,6 +104,14 @@ export default function Heading() {
                         ></span>
                     </Link>
                 ))}
+                {/*<div*/}
+                {/*    onClick={toggleDarkMode}*/}
+                {/*    className="relative w-14 h-8 rounded-3xl bg-neutral-100 dark:bg-neutral-700 place-center cursor-pointer"*/}
+                {/*>*/}
+                {/*    <div*/}
+                {/*        className={`absolute top-1 rounded-full w-6 h-6 bg-blue-500 ${isDarkMode ? "left-1" : "right-1"}`}*/}
+                {/*    />*/}
+                {/*</div>*/}
             </div>
         </nav>
     );

@@ -38,7 +38,7 @@ class ServiceSeeder extends Seeder
                     </div>
                 ',
                 'image_path' => null,
-                'price' => 180,
+                'price' => 150,
             ],
             [
                 'name' => $this->serviceName[1],
@@ -59,7 +59,7 @@ class ServiceSeeder extends Seeder
                     </div>
                 ',
                 'image_path' => null,
-                'price' => 180,
+                'price' => 150,
             ],
         ];
 

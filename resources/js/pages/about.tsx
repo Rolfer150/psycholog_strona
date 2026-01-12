@@ -54,13 +54,10 @@ export default function About() {
 
                     <article className="w-full text-2xl leading-relaxed text-brown-600 md:w-2/3 space-y-12 text-center">
                         <p>
-                            Jestem psychologiem. Rozwijam się realizując szkolenie psychoterapeutyczne w Klinice Psychiatrii Dorosłych Szpitala Uniwersyteckiego w Krakowie, szkolenie w nurcie psychodynamicznym.
+                            Magister psychologii, realizuję całościowe, czteroletnie szkolenie psychoterapeutyczne w nurcie psychodynamicznym w Klinice Psychiatrii Dorosłych Szpitala Uniwersyteckiego w Krakowie.
                         </p>
                         <p>
-                            Pracuję z osobami, które doświadczają trudności w relacjach, nadmiernego napięcia, niskiego poczucia własnej wartości czy trudności w rozumieniu własnych emocji.
-                        </p>
-                        <p>
-                            W pracy psychoterapeutycznej przyglądam się nie tylko aktualnym objawom, ale też głębszym mechanizmom i wzorcom, które mogą wynikać z wcześniejszych doświadczeń.
+                            Na codzień pracuję w prywatnej placówce z osobami dorosłymi i młodzieżą powyżej  15 r.ż., a także jestem psychologiem szkolnym w Szkole Podstawowej nr.4 im. Króla Kazimierza Wielkiego w Nowym Targu.
                         </p>
                     </article>
                 </section>

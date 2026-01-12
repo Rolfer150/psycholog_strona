@@ -17,7 +17,7 @@ export default function Create() {
 
     useEffect(() => {
         if (!mapRef.current) return;
-        const location = [50.2584994, 19.0241646];
+        const location = [49.4819265, 20.0312562];
         const map = L.map(mapRef.current).setView(location, 15);
         const orangeIcon = new L.Icon({
             iconUrl: 'img/marker-icon-2x-orange.png',
@@ -34,13 +34,12 @@ export default function Create() {
         }).addTo(map);
 
         const marker = L.marker(location, {icon: orangeIcon})
-            .addTo(map)
-            .bindPopup('Morze Zmian\n' + 'Centrum Zdrowia\n' + 'Psychicznego');
+            .addTo(map);
 
         marker.on('mouseover', () => marker.openPopup());
         marker.on('mouseout', () => marker.closePopup());
         marker.on('click', () => {
-            window.location.href = "https://www.google.com/maps/place/Staromiejska+12%2F2,+40-013+Katowice/@50.2583376,19.0229802,17.88z/data=!4m5!3m4!1s0x4716ce362c36ea85:0xfaf9e54b8d7a98b6!8m2!3d50.2584142!4d19.0241739?entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D";
+            window.location.href = "https://www.google.pl/maps/place/Nowy+Targ/@49.4893276,20.0030846,11916m/data=!3m2!1e3!4b1!4m6!3m5!1s0x4715e4960845d6d3:0xef2afa91a89443c5!8m2!3d49.4774647!4d20.032096!16zL20vMDIyOWhm?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D";
         });
     }, []);
 
@@ -137,37 +136,16 @@ export default function Create() {
             <div key={url} className="mx-auto max-w-7xl py-32">
                 <section className="flex flex-col justify-center items-center gap-8 space-y-32 w-full">
                     <div ref={contactRef}>
+                        <h2 className="mb-32 text-5xl font-semibold text-center text-brown-400">Obecnie w ramach własnej praktyki przyjmuję wyłącznie online, jednak na codzień związany jestem z Nowym Targiem</h2>
                         <h2 className="text-5xl font-semibold text-center text-brown-400">Skontaktuj się ze mną poprzez:</h2>
 
                         {/* Dane kontaktowe z animacją */}
                         <div
 
-                            className="grid grid-cols-1 lg:grid-cols-3 md:gap-6 w-full mt-24 text-white min-h-[50vh]"
+                            className="grid grid-cols-1 lg:grid-cols-2 md:gap-6 w-full mt-24 text-white min-h-[50vh] font-contact"
                         >
-                            {/* Adres */}
-                            <div className="p-6 rounded-t-xl md:rounded-xl shadow-lg bg-brown-400">
-                                <h2 className="text-6xl font-semibold my-12 text-center">Adres</h2>
-                                <a
-                                    href="https://www.google.com/maps/place/Staromiejska+12%2F2,+40-013+Katowice/@50.2583376,19.0229802,17.88z/data=!4m5!3m4!1s0x4716ce362c36ea85:0xfaf9e54b8d7a98b6!8m2!3d50.2584142!4d19.0241739?entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D"
-                                    className="group block"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <div className="grid place-items-center">
-                                        <div>
-                                            <svg className="size-12 w-full mb-4" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                                                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                                            </svg>
-                                            <p className="text-2xl text-center">ul. Staromiejska 12/2, Katowice</p>
-                                        </div>
-                                        <span className="block w-0 group-hover:w-full bg-white transition-all duration-500 h-0.5"></span>
-                                    </div>
-                                </a>
-                            </div>
-
                             {/* E-mail */}
-                            <div className="p-6 md:rounded-xl shadow-lg bg-brown-400">
+                            <div className="p-6 rounded-t-xl md:rounded-xl shadow-lg bg-brown-400">
                                 <h2 className="text-6xl font-semibold my-12 text-center">E-mail</h2>
                                 <a href="mailto:kubachrobakemail@gmail.com" className="group block" rel="noopener noreferrer">
                                     <div className="grid place-items-center">
@@ -177,7 +155,7 @@ export default function Create() {
                                             </svg>
                                             <p className="text-2xl">kubachrobakemail@gmail.com</p>
                                         </div>
-                                        <span className="block w-0 group-hover:w-full bg-white transition-all duration-500 h-0.5"></span>
+                                        <span className="block w-0 mb-12 group-hover:w-full bg-white transition-all duration-500 h-0.5"></span>
                                     </div>
                                 </a>
                             </div>
@@ -193,7 +171,7 @@ export default function Create() {
                                             </svg>
                                             <p className="text-2xl">501 458 987</p>
                                         </div>
-                                        <span className="block w-0 group-hover:w-full bg-white transition-all duration-500 h-0.5"></span>
+                                        <span className="block w-0 mb-12 group-hover:w-full bg-white transition-all duration-500 h-0.5"></span>
                                     </div>
                                 </a>
                             </div>
