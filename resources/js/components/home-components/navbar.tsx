@@ -41,7 +41,7 @@ export default function Heading() {
             {/* Header z nazwą i hamburgerem */}
             <div className="flex items-center justify-between md:hidden px-4 py-4 h-20">
                 <button
-                    className="flex flex-col justify-center items-center group"
+                    className="flex flex-col justify-center items-center group cursor-pointer z-60"
                     onClick={() => setOpen(!open)}
                     aria-label="Otwórz menu"
                 >

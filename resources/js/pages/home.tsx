@@ -71,7 +71,7 @@ export default function Home() {
             <div className="mx-auto">
                 <section
                     ref={aboutRef}
-                    className="mx-auto max-w-4xl px-6 py-32 min-h-screen text-2xl lg:text-4xl leading-relaxed text-center text-brown-600 min-h-screen">
+                    className="mx-auto max-w-4xl px-6 py-32 text-2xl md:text-4xl leading-relaxed text-center text-brown-600 min-h-screen flex items-center">
                     <p>
                         Jeśli zmagasz się z nadmiarem stresu, czujesz się przeciążony emocjonalnie albo Twoje relacje nie układają się tak, jak byś chciał — zapraszam do kontaktu.
                     </p>

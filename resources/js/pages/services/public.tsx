@@ -43,7 +43,7 @@ export default function Services() {
         <>
             <Head title="Usługi i ceny" />
             <Header>Usługi</Header>
-            <div className="mx-auto max-w-6xl py-32">
+            <div className="mx-auto max-w-6xl py-32 min-h-screen">
                 <section
                     ref={sectionRef}
                     className="grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-18 p-4"

@@ -38,20 +38,20 @@ export default function Header({ title, description }: { title: string; descript
 
     return (
         <AnimateOnScroll>
-            <header className="relative flex flex-col-reverse items-center justify-center gap-12 px-6 py-12 text-brown-400 md:flex-row md:gap-20 bg-[#faf6ef] overflow-hidden min-h-screen mx-auto">
-                <div className="w-full md:w-2/3 flex flex-col p-4">
-                    <h1 className="mb-6 text-6xl font-extrabold leading-tight lg:text-8xl md:leading-tight text-center md:text-left">
+            <header className="relative flex flex-col-reverse items-center justify-center text-brown-400 lg:flex-row bg-[#faf6ef] overflow-hidden min-h-screen mx-auto px-6 py-8 lg:py-0">
+                <div className="w-full lg:w-2/3 flex flex-col mt-[25%] mb-[75%] md:mb-[50%] lg:mt-0 lg:mb-0">
+                    <h1 className="mb-6 text-6xl font-extrabold leading-tight md:text-8xl lg:leading-tight text-center lg:text-left">
                         {title}
                     </h1>
                     {description && (
-                        <p className="max-w-3xl text-2xl lg:text-4xl font-light leading-snug opacity-90 drop-shadow-sm text-center md:text-left">
+                        <p className="text-2xl md:text-4xl font-light lg:leading-snug opacity-90 drop-shadow-sm text-center lg:text-left">
                             {description}
                         </p>
                     )}
                 </div>
 
                 {/* Dekoracyjne zdjęcie */}
-                <div className="w-full min-h-screen md:w-1/3 flex justify-center items-center">
+                <div className="w-full min-h-screen lg:w-1/3 flex justify-center items-center">
                     <div className="aspect-[4/5] w-full max-w-md">
                         <img
                             src="/img/logo.png"

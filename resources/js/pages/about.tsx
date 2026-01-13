@@ -41,9 +41,9 @@ export default function About() {
             <Head title="O mnie" />
             <Header>O mnie</Header>
 
-            <div className="mx-auto max-w-6xl px-6 py-24 space-y-32">
+            <div className="mx-auto max-w-6xl px-6 py-24 space-y-32 min-h-screen">
                 {/* Sekcja 1 */}
-                <section ref={section1Ref} className="flex flex-col items-center gap-12 md:flex-row md:items-start">
+                <section ref={section1Ref} className="flex flex-col items-center gap-12 md:flex-row">
                     <aside className="w-full md:w-1/3">
                         <img
                             src="/img/profile.jpg"
@@ -74,19 +74,11 @@ export default function About() {
                                 <li>mają trudność z podejmowaniem decyzji lub nadmiernie siebie kontrolują.</li>
                             </ul>
                         </div>
-                        <div>
-                            <h2 className="mb-2 text-xl font-semibold text-brown-600">Przyjmuję w Nowym Targu oraz online. Również współpracuję z:</h2>
-
-                            <ul className="list-disc list-inside space-y-2 marker:text-brown-400">
-                                <li><i>Centrum Myśli</i> w Myślenicach, oferując (tylko dorośli) konsultacje psychologiczne, psychoterapię indywidualną a takżę psychoterapię par/rodzin - prowadzoną z drugim terapeutą (tzw. koterapia). </li>
-                                <li><i>Morzem Zmian</i> w Katowicach, proponując (tylko dorośli) konsultacje psychologiczne, diagnozę osobowości, ADHD, psychoterapię indywidualną.</li>
-                            </ul>
-                        </div>
                     </article>
                 </section>
 
                 {/* Sekcja 3 */}
-                <section ref={section3Ref} className="rounded-lg border border-zinc-200 bg-zinc-50 p-8 shadow-md md:p-10">
+                <section ref={section3Ref} className="rounded-lg border border-zinc-200 bg-zinc-50 p-8 shadow-md md:p-10 mb-20">
                     <h2 className="mb-6 text-2xl font-semibold text-brown-600">Moja ścieżka zawodowa i zasady pracy</h2>
                     <ul className="list-disc list-outside space-y-2 text-lg leading-relaxed text-zinc-700 marker:text-brown-400">
                         <li>Realizuje 4 letnie szkolenie psychoterapeutyczne w nurcie psychodynamicznym, szkolenie akredytowane przez sekcję naukową psychoterapii polskiego towarzystwa psychiatrycznego jako kurs prowadzący do uzyskania certyfikatu psychoterapeuty polskiego towarzystwa psychiatrycznego</li>

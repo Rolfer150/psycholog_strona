@@ -1,6 +1,8 @@
 import { Link } from '@inertiajs/react';
 
 export default function Footer() {
+    const currentYear = new Date().getFullYear();
+
     return (
         <footer className="bg-neutral-500 p-4 text-neutral-100">
             <div className="my-16 grid grid-cols-1 place-items-center gap-6 p-8 text-center md:grid-cols-3">
@@ -54,13 +56,13 @@ export default function Footer() {
                     </svg>
 
                     <a href="tel:501458987" className="transition-colors duration-100 ease-in-out hover:text-zinc-300">
-                        501 458 987
+                        +48 501 458 987
                     </a>
                 </div>
             </div>
 
             <p className="border-t border-neutral-400 p-8 pt-12 text-center text-sm">
-                © 2025 mgr Jakub Chrobak Psycholog. Wszelkie prawa zastrzeżone.
+                © { currentYear } mgr Jakub Chrobak Psycholog. Wszelkie prawa zastrzeżone.
             </p>
         </footer>
     );
