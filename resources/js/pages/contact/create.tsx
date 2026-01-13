@@ -136,7 +136,7 @@ export default function Create() {
             <div key={url} className="mx-auto max-w-7xl py-32">
                 <section className="flex flex-col justify-center items-center gap-8 space-y-32 w-full">
                     <div ref={contactRef}>
-                        <h2 className="text-5xl font-semibold text-center text-brown-400">Skontaktuj się ze mną poprzez:</h2>
+                        <h2 className="text-5xl font-semibold text-center text-brown-400 p-4">Skontaktuj się ze mną poprzez:</h2>
 
                         {/* Dane kontaktowe z animacją */}
                         <div
@@ -179,7 +179,7 @@ export default function Create() {
 
                     {/* Widget ze ZnanyLekarz.pl z animacją fade-in */}
                     <div ref={znanylekarzRef} className="w-full md:w-2/3">
-                        <h2 className="text-5xl font-semibold text-center text-brown-400">lub złóż wizytę przy pomocy platformy ZnanyLekarz.pl</h2>
+                        <h2 className="text-5xl font-semibold text-center text-brown-400 p-4">lub złóż wizytę przy pomocy platformy ZnanyLekarz.pl</h2>
                         <div className="bg-white rounded-xl shadow-lg p-6 mt-24 flex justify-center items-center">
                             <a
                                 id="zl-url"
@@ -198,7 +198,7 @@ export default function Create() {
                         </div>
                     </div>
 
-                    <h2 className="mb-32 text-5xl font-semibold text-center text-brown-400">Obecnie w ramach własnej praktyki przyjmuję wyłącznie online, jednak na codzień związany jestem z Nowym Targiem</h2>
+                    <h2 className="mb-32 text-5xl font-semibold text-center text-brown-400 p-4">Obecnie w ramach własnej praktyki przyjmuję wyłącznie online, jednak na codzień związany jestem z Nowym Targiem</h2>
 
                     {/* Mapa z animacją */}
                     <div
